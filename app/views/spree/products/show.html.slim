@@ -58,14 +58,10 @@
     = @product.taxons.where(parent_id: 12).first.name
   p = raw strip_tags @product.description
   / В этом блоке тоже можешь вставить как там по дефолту, я скорее всего поправлю
-  form.price
-    .amount = display_price(@product)
-    input
-    button type="submit"
-      = icon 'shopping-cart'
-      | в корзину
+  /form.price
+  /  .amount = display_price(@product)
 
-    = render 'cart_form'
+  = render 'spree/custom_shared/cart_form_custom'
   .files
     a.manual href="#"
       =' icon 'wrench'

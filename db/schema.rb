@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924130718) do
+ActiveRecord::Schema.define(version: 20140930130011) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -952,6 +952,7 @@ ActiveRecord::Schema.define(version: 20140924130718) do
     t.datetime "updated_at"
     t.string   "spree_api_key",          limit: 48
     t.datetime "remember_created_at"
+    t.integer  "price_kind"
   end
 
   add_index "spree_users", ["email"], name: "email_idx_unique", unique: true
