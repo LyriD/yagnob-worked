@@ -1,0 +1,82 @@
+- content_for :bodyClass, 'product'
+.left
+  .fotorama data-nav="thumbs" data-width="100%"
+    - @product.images.each do |i|
+      = image_tag(i.attachment.url(:product))
+  .similarProducts
+    h2 Похожие товары
+    .row
+      - @product.taxons.first.products.limit(6).each do |p|
+        section class="product supershit new awesome cool"
+          .imgWrap
+            = product_image(p, :itemprop => "image")
+          h2
+            = link_to p.name, product_url(p, :taxon_id => @taxon.try(:id))
+          .price = display_price(p)
+          a.toCart href="#" #{icon('shopping-cart')} в корзину
+
+
+
+
+          /<%= form_for :order, :url => populate_orders_path, html: { :class => 'form_s' }, remote: true do |f| %>
+          /  <% if product.variants_and_option_values(current_currency).any? and spree_current_user and spree_current_user.wholesaler %>
+          /
+          /    <% product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
+          /      <div>
+          /        <%= radio_button_tag "variant_id", variant.id, index == 0, 'data-price' => Spree::Money.new(variant.price, with_currency: true).to_s  %>
+          /
+          /        <%# radio_button_tag "products[#{product.id}]", variant.id, index == 0, 'data-price' => variant.price_in(current_currency).display_price %>
+          /        <%= variant_options variant %>
+          /        <% if variant_price variant %>
+          /          <span class="price diff"><%= variant_price variant %></span>
+          /        <% end %>
+          /      </div>
+          /    <% end %>
+          /  <% else %>
+          /    <%= hidden_field_tag "variant_id", product.master.id %>
+          /  <% end %>
+          /
+          /
+          /
+          /
+          /
+          /
+          /  <%= hidden_field_tag :quantity, 1 %>
+          /
+          /
+          /  <%= f.submit '', :class => 'cart' %>
+          /  <!--<a href="#"><div class="cart"></div></a>-->
+          /  <% end %>
+
+
+.right
+  h1 = @product.name
+  - @product.taxons.where(parent_id: 12).first.name
+  a.brand href="#"
+    = image_tag @product.taxons.where(parent_id: 12).first.url(:preview)
+    |
+    = @product.taxons.where(parent_id: 12).first.name
+  p = @product.description
+  / В этом блоке тоже можешь вставить как там по дефолту, я скорее всего поправлю
+  form.price
+    .amount = display_price(@product)
+    input
+    button type="submit"
+      = icon 'shopping-cart'
+      | в корзину
+
+    = render 'cart_form'
+  .files
+    a.manual href="#"
+      =' icon 'wrench'
+      | инструкция
+    a.certificate href="#"
+      =' icon 'file-text'
+      | сертификат
+  / Выведи как она есть, я сам кастомизирую
+  table.specs
+    -7.times
+      tr
+        td.type #{['длина клинка', ' ширина клинка', 'толщина обуха', 'сталь', 'рукоятка'].sample}
+        td.value #{['100 мм','27 мм','230 мм','коррозионно-стойкая','дерево'].sample}
+

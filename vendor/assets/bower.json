@@ -1,0 +1,9 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "fotorama": "latest",
+    "sly": "latest",
+    "jstree": "latest",
+    "jquery-easing-original": "latest"
+  }
+}

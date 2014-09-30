@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    title = title
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'http://api-maps.yandex.ru/2.1/?lang=ru_RU'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'spree/frontend/all', 'data-turbolinks-track' => true
+    == meta_data_tags
+    = canonical_tag(current_store.url)
+    = csrf_meta_tags
+  body class="#{yield :bodyClass}"
+    #container
+      header
+        a#logo href="/"
+        menu#mainMenu
+          li: a href="/" Главная
+          = render :partial => "spree/static_content/static_content_list", :collection => Spree::Page.visible.header_links, :as => :page
+      #leftMenu
+        = render :partial => 'spree/shared/taxonomies'
+      #breadcrumbs
+        = breadcrumbs(@taxon, "#{icon 'fa fa-angle-right'}")
+        /ul
+        /  li: a href="#" #{icon 'home'}
+        /  = icon 'angle-right'
+        /  li: a href="#" каталог
+        /  = icon 'angle-right'
+        /  li: a href="#" ножи
+        /  = icon 'angle-right'
+        /  li: a href="#": span складные
+      #content
+        - content_for :bodyClass, 'articles'
+        - Article.all.each do |article|
+          section.article
+            = image_tag(article.spree_images.first.attachment.url(:article_index)) if article.spree_images.first
+            .content
+              h1
+                = link_to article.title, "/articles/#{article.slug}"
+              p = article.teaser
+      #popularProducts
+        = render 'spree/custom_shared/popular'
+      footer
+        a.logo href="#" ООО Ягноб
+        .slogan оптовая продажа и производство спортивных, туристиеских и охотничьих товаров
+        .phone +7 (495) 232-23-22
+        menu
+          = render :partial => "spree/static_content/static_content_list", :collection => Spree::Page.visible.footer_links, :as => :page

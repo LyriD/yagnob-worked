@@ -1,0 +1,17 @@
+- content_for :bodyClass, 'article'
+h1 =@article.title
+/ Здесь выводим все картиночки, пачкой прикрепленные к статье
+.fotorama data-nav="thumbs" data-width="100%"
+  - @article.spree_images.each do |image|
+    = image_tag image.attachment.url(:article_index)
+= raw @article.text
+/ Гоша, вот сюда подставляется автор статьи. Дефолт - Ягноб. Но это может быть перепечатка из комсомольской правды
+.author = @article.author
+/ А это рендерится следующая по списку статья
+- next_article = Article.where("id > ?", @article).first
+section.article
+  = image_tag(next_article.spree_images.first.attachment.url(:article_index)) if next_article.spree_images.first
+  .content
+    h1
+      = link_to next_article.title, "/articles/#{next_article.slug}"
+    p = next_article.teaser

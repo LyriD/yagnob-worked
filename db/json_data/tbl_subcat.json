@@ -1,0 +1,505 @@
+[{
+  "ID": 1,
+  "HEADER": "складные",
+  "CODE": "folding",
+  "CATEGORY": 1
+ },
+ {
+  "ID": 2,
+  "HEADER": "нескладные",
+  "CODE": "nonfolding",
+  "CATEGORY": 1
+ },
+ {
+  "ID": 4,
+  "HEADER": "выкидные",
+  "CODE": "switching",
+  "CATEGORY": 1
+ },
+ {
+  "ID": 5,
+  "HEADER": "разделочные",
+  "CODE": "carving",
+  "CATEGORY": 1
+ },
+ {
+  "ID": 6,
+  "HEADER": "большие бинокли",
+  "CODE": "big",
+  "CATEGORY": 2
+ },
+ {
+  "ID": 7,
+  "HEADER": "маленькие бинокли",
+  "CODE": "small",
+  "CATEGORY": 2
+ },
+ {
+  "ID": 8,
+  "HEADER": "приборы ночного видения",
+  "CODE": "night",
+  "CATEGORY": 2
+ },
+ {
+  "ID": 9,
+  "HEADER": "зрительные трубы",
+  "CODE": "spyglasses",
+  "CATEGORY": 2
+ },
+ {
+  "ID": 10,
+  "HEADER": "винтовочные",
+  "CODE": "rifles",
+  "CATEGORY": 5
+ },
+ {
+  "ID": 11,
+  "HEADER": "пистолетные",
+  "CODE": "pistols",
+  "CATEGORY": 5
+ },
+ {
+  "ID": 12,
+  "HEADER": "винтовки",
+  "CODE": "rifles",
+  "CATEGORY": 6
+ },
+ {
+  "ID": 13,
+  "HEADER": "пистолеты",
+  "CODE": "pistols",
+  "CATEGORY": 6
+ },
+ {
+  "ID": 14,
+  "HEADER": "дневные",
+  "CODE": "day",
+  "CATEGORY": 4
+ },
+ {
+  "ID": 15,
+  "HEADER": "ночные",
+  "CODE": "night",
+  "CATEGORY": 4
+ },
+ {
+  "ID": 16,
+  "HEADER": "коллиматорные",
+  "CODE": "collimator",
+  "CATEGORY": 4
+ },
+ {
+  "ID": 17,
+  "HEADER": "кобуры",
+  "CODE": "holsters",
+  "CATEGORY": 3
+ },
+ {
+  "ID": 18,
+  "HEADER": "подвесные системы",
+  "CODE": "systems",
+  "CATEGORY": 3
+ },
+ {
+  "ID": 19,
+  "HEADER": "патронташи",
+  "CODE": "bandoliers",
+  "CATEGORY": 3
+ },
+ {
+  "ID": 20,
+  "HEADER": "чехлы",
+  "CODE": "covers",
+  "CATEGORY": 3
+ },
+ {
+  "ID": 21,
+  "HEADER": "кейсы",
+  "CODE": "cases",
+  "CATEGORY": 3
+ },
+ {
+  "ID": 22,
+  "HEADER": "ремни",
+  "CODE": "belts",
+  "CATEGORY": 3
+ },
+ {
+  "ID": 23,
+  "HEADER": "ножны",
+  "CODE": "scabbards",
+  "CATEGORY": 3
+ },
+ {
+  "ID": 24,
+  "HEADER": "ягдташи",
+  "CODE": "yagdtashes",
+  "CATEGORY": 3
+ },
+ {
+  "ID": 25,
+  "HEADER": "йцу",
+  "CODE": "itsu",
+  "CATEGORY": 5
+ },
+ {
+  "ID": 26,
+  "HEADER": "дневные",
+  "CODE": "day",
+  "CATEGORY": 7
+ },
+ {
+  "ID": 27,
+  "HEADER": "очки",
+  "CODE": "glasses",
+  "CATEGORY": 7
+ },
+ {
+  "ID": 28,
+  "HEADER": "ночные",
+  "CODE": "night",
+  "CATEGORY": 7
+ },
+ {
+  "ID": 29,
+  "HEADER": "бабочка",
+  "CODE": "butterfly",
+  "CATEGORY": 1
+ },
+ {
+  "ID": 30,
+  "HEADER": "брелок",
+  "CODE": "brelok",
+  "CATEGORY": 1
+ },
+ {
+  "ID": 31,
+  "HEADER": "метательные",
+  "CODE": "fling",
+  "CATEGORY": 1
+ },
+ {
+  "ID": 32,
+  "HEADER": "инструменты",
+  "CODE": "multitool",
+  "CATEGORY": 1
+ },
+ {
+  "ID": 33,
+  "HEADER": "точилки",
+  "CODE": "sharpeners",
+  "CATEGORY": 1
+ },
+ {
+  "ID": 34,
+  "HEADER": "револьверы",
+  "CODE": "revolvers",
+  "CATEGORY": 6
+ },
+ {
+  "ID": 35,
+  "HEADER": "подводная охота",
+  "CODE": "underwater",
+  "CATEGORY": 6
+ },
+ {
+  "ID": 36,
+  "HEADER": "Высечка",
+  "CODE": "vysechka",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 37,
+  "HEADER": "Гильзы",
+  "CODE": "gilzy",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 38,
+  "HEADER": "Дозатор",
+  "CODE": "dozator",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 39,
+  "HEADER": "Закрутки",
+  "CODE": "zakrutki",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 40,
+  "HEADER": "Капканы",
+  "CODE": "kapkany",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 41,
+  "HEADER": "Капсюль",
+  "CODE": "kapsul",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 42,
+  "HEADER": "Mанки",
+  "CODE": "manki",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 43,
+  "HEADER": "Масло оружейное",
+  "CODE": "oil",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 44,
+  "HEADER": "Мерка",
+  "CODE": "merka",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 45,
+  "HEADER": "Металлоискатели",
+  "CODE": "metalloiskateli",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 46,
+  "HEADER": "Мишени",
+  "CODE": "misheni",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 48,
+  "HEADER": "Наборы для чистки оружия",
+  "CODE": "nabory_for_cleaning",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 49,
+  "HEADER": "Подставка",
+  "CODE": "stand",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 50,
+  "HEADER": "Приборы",
+  "CODE": "devices",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 51,
+  "HEADER": "Прокладки",
+  "CODE": "prokladki",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 52,
+  "HEADER": "Пули",
+  "CODE": "bullets",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 56,
+  "HEADER": "Пыжи",
+  "CODE": "pizhi",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 57,
+  "HEADER": "рация",
+  "CODE": "radio",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 58,
+  "HEADER": "баллончики",
+  "CODE": "ballons",
+  "CATEGORY": 9
+ },
+ {
+  "ID": 59,
+  "HEADER": "дубинки",
+  "CODE": "dubinki",
+  "CATEGORY": 9
+ },
+ {
+  "ID": 60,
+  "HEADER": "крепления",
+  "CODE": "mounts",
+  "CATEGORY": 9
+ },
+ {
+  "ID": 61,
+  "HEADER": "моноблоки",
+  "CODE": "monoblocks",
+  "CATEGORY": 9
+ },
+ {
+  "ID": 62,
+  "HEADER": "наручники",
+  "CODE": "naruchniki",
+  "CATEGORY": 9
+ },
+ {
+  "ID": 63,
+  "HEADER": "планка",
+  "CODE": "plank",
+  "CATEGORY": 9
+ },
+ {
+  "ID": 64,
+  "HEADER": "рогатки",
+  "CODE": "rogatky",
+  "CATEGORY": 9
+ },
+ {
+  "ID": 65,
+  "HEADER": "устройство самообороны",
+  "CODE": "self-defence",
+  "CATEGORY": 9
+ },
+ {
+  "ID": 66,
+  "HEADER": "электрошокеры",
+  "CODE": "shockers",
+  "CATEGORY": 9
+ },
+ {
+  "ID": 67,
+  "HEADER": "Компасы",
+  "CODE": "compasses",
+  "CATEGORY": 10
+ },
+ {
+  "ID": 68,
+  "HEADER": "Туристические наборы/ столовые приборы",
+  "CODE": "table utensils",
+  "CATEGORY": 1
+ },
+ {
+  "ID": 69,
+  "HEADER": "Огниво",
+  "CODE": "aksessuary",
+  "CATEGORY": 9
+ },
+ {
+  "ID": 70,
+  "HEADER": "Подзорные трубы",
+  "CODE": "podzornye-truby",
+  "CATEGORY": 2
+ },
+ {
+  "ID": 71,
+  "HEADER": "микроскопы",
+  "CODE": "microscope",
+  "CATEGORY": 2
+ },
+ {
+  "ID": 72,
+  "HEADER": "Патроны для холодной пристрелки  ",
+  "CODE": "patrony-lazernye-dlya-kholodnoi-pristrelki-oruzhiya",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 73,
+  "HEADER": "Наглазник для прицела",
+  "CODE": "naglaznik-dlya-pritsela",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 74,
+  "HEADER": "Шагомер",
+  "CODE": "shagomer",
+  "CATEGORY": 9
+ },
+ {
+  "ID": 75,
+  "HEADER": "Курвиметр",
+  "CODE": "kurvimetr",
+  "CATEGORY": 10
+ },
+ {
+  "ID": 76,
+  "HEADER": "Лупы",
+  "CODE": "lupy",
+  "CATEGORY": 9
+ },
+ {
+  "ID": 77,
+  "HEADER": "Cтрелы для арбалетов",
+  "CODE": "ctrely-dlya-arbaletov",
+  "CATEGORY": 5
+ },
+ {
+  "ID": 78,
+  "HEADER": "Термометр/гигрометр ",
+  "CODE": "termometrgigrometr",
+  "CATEGORY": 9
+ },
+ {
+  "ID": 79,
+  "HEADER": "чучела",
+  "CODE": "chuchela",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 80,
+  "HEADER": "Запчасти",
+  "CODE": "zapchasti",
+  "CATEGORY": 6
+ },
+ {
+  "ID": 81,
+  "HEADER": "Рекурсивные",
+  "CODE": "arbalety-rekursivnye",
+  "CATEGORY": 5
+ },
+ {
+  "ID": 82,
+  "HEADER": "Лук блочный",
+  "CODE": "luk-blochnyi",
+  "CATEGORY": 5
+ },
+ {
+  "ID": 83,
+  "HEADER": "Подводная охота",
+  "CODE": "podvodnaya-okhota",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 84,
+  "HEADER": "Спички",
+  "CODE": "spichki",
+  "CATEGORY": 9
+ },
+ {
+  "ID": 85,
+  "HEADER": "Оружейные сейфы",
+  "CODE": "oruzheinye-seify",
+  "CATEGORY": 8
+ },
+ {
+  "ID": 86,
+  "HEADER": "Посуда",
+  "CODE": "posuda",
+  "CATEGORY": 9
+ },
+ {
+  "ID": 87,
+  "HEADER": "Весы",
+  "CODE": "vesy",
+  "CATEGORY": 9
+ },
+ {
+  "ID": 88,
+  "HEADER": "Кухонные ножи",
+  "CODE": "kukhonnye-nozhi",
+  "CATEGORY": 1
+ },
+ {
+  "ID": 89,
+  "HEADER": "Брелок сувенирный",
+  "CODE": "brelok-suvenirnyi",
+  "CATEGORY": 9
+ }
+]

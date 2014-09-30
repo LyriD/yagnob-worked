@@ -1,0 +1,77 @@
+<%= render 'spree/admin/shared/configuration_menu' %>
+<script>
+    $(function(){
+        ck_load();
+    });
+</script>
+<% content_for :page_title do %>
+    Редактировать статью
+<% end %>
+
+<% content_for :page_actions do %>
+    <li><%= button_link_to 'Вернуться к списку', '/admin/articles', :icon => 'icon-arrow-left' %></li>
+<% end %>
+
+<%= render "spree/shared/error_messages", :target => @article %>
+
+<%= nested_form_for(@article, url: '/articles') do |f| %>
+    <fieldset class="no-border-top">
+      <div data-hook="admin_page_form_fields">
+        <div class="left eight columns alpha" data-hook="admin_page_form_left">
+          <%= f.hidden_field :id, value: @article.id %>
+
+          <%= f.field_container :title do %>
+              <%= f.label :title %> <span class="required">*</span><br />
+              <%= f.text_field :title, :class => 'fullwidth title' %>
+              <%= f.error_message_on :title %>
+          <% end %>
+
+          <%= f.field_container :slug do %>
+              <%= f.label :slug %> <span class="required">*</span><br />
+              <%= f.text_field :slug, :class => 'fullwidth title' %>
+              <%= f.error_message_on :slug %>
+          <% end %>
+
+
+          <%= f.field_container :teaser do %>
+              <%= f.label :teaser %> <span class="required">*</span><br />
+              <%= f.text_area :teaser, {rows: 8, :class => 'fullwidth ckeditor'}  %>
+              <%= f.error_message_on :teaser %>
+          <% end %>
+
+          <%= f.field_container :text do %>
+              <%= f.label :text %> <span class="required">*</span><br />
+              <%= f.text_area :text, {rows: 12, :class => 'fullwidth ckeditor'} %>
+              <%= f.error_message_on :text %>
+          <% end %>
+
+          <%= f.field_container :author do %>
+              <%= f.label :author %> <span class="required">*</span><br />
+              <%= f.text_field :author, :class => 'fullwidth title' %>
+              <%= f.error_message_on :author %>
+          <% end %>
+
+
+          <%= f.fields_for :spree_images do |image_form| %>
+              <br><br>
+              <%= image_tag(image_form.object.attachment.url(:product)) unless image_form.object.new_record? %>
+              <%= image_form.file_field :attachment if image_form.object.new_record? %><br>
+              <%= image_form.label 'ссылка'  %>
+              <%= image_form.text_field :alt %>
+              <%= image_form.hidden_field :viewable_type, value: 'Article' %>
+              <%= image_form.link_to_remove "Удалить изображение" %>
+          <% end %>
+          <p><%= f.link_to_add "Добавить изображение", :spree_images %></p>
+
+        </div>
+
+        <div class="clear"></div>
+        <div data-hook="admin_page_form_additional_fields"></div>
+        <div class="clear"></div>
+      </div>
+      <%# render :partial => 'spree/admin/shared/new_resource_links' %>
+    </fieldset>
+    <div class="form-buttons filter-actions actions" data-hook="buttons">
+      <%= button Spree.t('actions.update'), 'ok' %>
+    </div>
+<% end %>

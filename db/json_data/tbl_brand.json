@@ -1,0 +1,231 @@
+[{
+  "ID": 1,
+  "HEADER": "Yagnob",
+  "CODE": "Yagnob"
+ },
+ {
+  "ID": 2,
+  "HEADER": "Кизляр",
+  "CODE": "kizlyar"
+ },
+ {
+  "ID": 3,
+  "HEADER": "Borner",
+  "CODE": "Borner"
+ },
+ {
+  "ID": 4,
+  "HEADER": "Umarex",
+  "CODE": "Umarex"
+ },
+ {
+  "ID": 5,
+  "HEADER": "Crosman",
+  "CODE": "Crosman"
+ },
+ {
+  "ID": 6,
+  "HEADER": "Daisy",
+  "CODE": "Daisy"
+ },
+ {
+  "ID": 7,
+  "HEADER": "Blow",
+  "CODE": "Blow"
+ },
+ {
+  "ID": 8,
+  "HEADER": "Байкал",
+  "CODE": "Baikal"
+ },
+ {
+  "ID": 9,
+  "HEADER": "Hatsan",
+  "CODE": "Hatsan"
+ },
+ {
+  "ID": 10,
+  "HEADER": "Gamo",
+  "CODE": "Gamo"
+ },
+ {
+  "ID": 11,
+  "HEADER": "ХСН",
+  "CODE": "HSN"
+ },
+ {
+  "ID": 12,
+  "HEADER": "Хольстер",
+  "CODE": "Holster"
+ },
+ {
+  "ID": 13,
+  "HEADER": "Liapers",
+  "CODE": "Liapers"
+ },
+ {
+  "ID": 14,
+  "HEADER": "ВОМЗ",
+  "CODE": "VOMZ"
+ },
+ {
+  "ID": 15,
+  "HEADER": "Yukon",
+  "CODE": "Yukon"
+ },
+ {
+  "ID": 16,
+  "HEADER": "Казань",
+  "CODE": "Kazan"
+ },
+ {
+  "ID": 17,
+  "HEADER": "COCO",
+  "CODE": "COCO"
+ },
+ {
+  "ID": 18,
+  "HEADER": "ПОСП",
+  "CODE": "POSP"
+ },
+ {
+  "ID": 19,
+  "HEADER": "БПЦ",
+  "CODE": "BPZ"
+ },
+ {
+  "ID": 20,
+  "HEADER": "Bounty Hunter",
+  "CODE": "bounty_hunter"
+ },
+ {
+  "ID": 21,
+  "HEADER": "Cheddite",
+  "CODE": "Cheddite"
+ },
+ {
+  "ID": 22,
+  "HEADER": "Garett",
+  "CODE": "Garett"
+ },
+ {
+  "ID": 23,
+  "HEADER": "JJ-Connect",
+  "CODE": "JJ-Connect"
+ },
+ {
+  "ID": 24,
+  "HEADER": "Megaline",
+  "CODE": "Megaline"
+ },
+ {
+  "ID": 25,
+  "HEADER": "Аргут",
+  "CODE": "Argut"
+ },
+ {
+  "ID": 26,
+  "HEADER": "Беркут",
+  "CODE": "Berkut"
+ },
+ {
+  "ID": 27,
+  "HEADER": "Военохот",
+  "CODE": "Voenochot"
+ },
+ {
+  "ID": 28,
+  "HEADER": "Италия",
+  "CODE": "Italy"
+ },
+ {
+  "ID": 29,
+  "HEADER": "Отечественный",
+  "CODE": "native"
+ },
+ {
+  "ID": 30,
+  "HEADER": "СУАС",
+  "CODE": "suas"
+ },
+ {
+  "ID": 31,
+  "HEADER": "Тонар",
+  "CODE": "tonar"
+ },
+ {
+  "ID": 32,
+  "HEADER": "Эхоманъ",
+  "CODE": "echoman"
+ },
+ {
+  "ID": 33,
+  "HEADER": "\"Электроприбор\"",
+  "CODE": "elektropribor"
+ },
+ {
+  "ID": 34,
+  "HEADER": "Турция",
+  "CODE": "turtsiya"
+ },
+ {
+  "ID": 35,
+  "HEADER": "\"Веряскин и К\" (Медтех)",
+  "CODE": "medteh"
+ },
+ {
+  "ID": 36,
+  "HEADER": "\"Поиск\" Кизляр",
+  "CODE": "Poisk"
+ },
+ {
+  "ID": 37,
+  "HEADER": "Carl Zeiss",
+  "CODE": "carl-zeiss"
+ },
+ {
+  "ID": 38,
+  "HEADER": "COMET",
+  "CODE": "COMET"
+ },
+ {
+  "ID": 39,
+  "HEADER": " Cybergun",
+  "CODE": "cybergun"
+ },
+ {
+  "ID": 40,
+  "HEADER": "SMERSH",
+  "CODE": "smersh"
+ },
+ {
+  "ID": 41,
+  "HEADER": "OOO\"А+А\" г.Тула",
+  "CODE": "ooo-a-a-g-tula"
+ },
+ {
+  "ID": 42,
+  "HEADER": "Gletcher ",
+  "CODE": "gletcher"
+ },
+ {
+  "ID": 43,
+  "HEADER": "Man Kung",
+  "CODE": "man-kung"
+ },
+ {
+  "ID": 44,
+  "HEADER": "Белка-Фаворит, ООО",
+  "CODE": "belka-favorit-ooo"
+ },
+ {
+  "ID": 45,
+  "HEADER": "OLDI",
+  "CODE": "oldi"
+ },
+ {
+  "ID": 46,
+  "HEADER": "Onix",
+  "CODE": "onix"
+ }
+]

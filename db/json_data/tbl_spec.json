@@ -1,0 +1,411 @@
+[{
+  "ID": 1,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "длина клинка",
+  "UNIT": "мм",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 1
+ },
+ {
+  "ID": 2,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "ширина клинка",
+  "UNIT": "мм",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 1
+ },
+ {
+  "ID": 3,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "общая длина",
+  "UNIT": "мм",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 1
+ },
+ {
+  "ID": 4,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "толщина обуха",
+  "UNIT": "мм",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 1
+ },
+ {
+  "ID": 5,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "толщина рукоятки",
+  "UNIT": "мм",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 1
+ },
+ {
+  "ID": 6,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "сталь",
+  "UNIT": null,
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 1
+ },
+ {
+  "ID": 7,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "ножны",
+  "UNIT": null,
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 1
+ },
+ {
+  "ID": 8,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "рукоятка",
+  "UNIT": null,
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 1
+ },
+ {
+  "ID": 9,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "Габариты",
+  "UNIT": "см",
+  "VARIANTS": null,
+  "FILTER": 0,
+  "CATEGORY": 5
+ },
+ {
+  "ID": 10,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "Дальность стрельбы",
+  "UNIT": "м",
+  "VARIANTS": null,
+  "FILTER": 0,
+  "CATEGORY": 5
+ },
+ {
+  "ID": 11,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "Масса нетто",
+  "UNIT": "кг",
+  "VARIANTS": null,
+  "FILTER": 0,
+  "CATEGORY": 5
+ },
+ {
+  "ID": 12,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "Длинна",
+  "UNIT": "см",
+  "VARIANTS": null,
+  "FILTER": 0,
+  "CATEGORY": 5
+ },
+ {
+  "ID": 13,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "калибр",
+  "UNIT": "мм",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 6
+ },
+ {
+  "ID": 14,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "материал корпуса",
+  "UNIT": null,
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 6
+ },
+ {
+  "ID": 15,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "источник энергии",
+  "UNIT": null,
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 6
+ },
+ {
+  "ID": 16,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "вид пуль",
+  "UNIT": null,
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 6
+ },
+ {
+  "ID": 17,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "вместимость магазина",
+  "UNIT": null,
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 6
+ },
+ {
+  "ID": 18,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "дульная энергия",
+  "UNIT": null,
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 6
+ },
+ {
+  "ID": 19,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "начальная скорость пули",
+  "UNIT": "м/с",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 6
+ },
+ {
+  "ID": 20,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "масса",
+  "UNIT": "г",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 6
+ },
+ {
+  "ID": 21,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "увеличение",
+  "UNIT": "крат",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 2
+ },
+ {
+  "ID": 22,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "диаметр объектива",
+  "UNIT": "мм",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 2
+ },
+ {
+  "ID": 23,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "диаметр выходного зрачка",
+  "UNIT": "мм",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 2
+ },
+ {
+  "ID": 24,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "поле зрения",
+  "UNIT": "грд",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 2
+ },
+ {
+  "ID": 25,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "цвет",
+  "UNIT": null,
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 2
+ },
+ {
+  "ID": 26,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "калибр",
+  "UNIT": "мм",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 3
+ },
+ {
+  "ID": 27,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "материал",
+  "UNIT": null,
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 3
+ },
+ {
+  "ID": 28,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "цвет",
+  "UNIT": null,
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 3
+ },
+ {
+  "ID": 29,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "увеличение",
+  "UNIT": "крат",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 4
+ },
+ {
+  "ID": 30,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "габариты",
+  "UNIT": "мм",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 4
+ },
+ {
+  "ID": 31,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "световой диаметр",
+  "UNIT": "мм",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 4
+ },
+ {
+  "ID": 32,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "увеличение",
+  "UNIT": "крат",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 7
+ },
+ {
+  "ID": 33,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "диаметр объектива",
+  "UNIT": "мм",
+  "VARIANTS": null,
+  "FILTER": null,
+  "CATEGORY": 7
+ },
+ {
+  "ID": 34,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "Усилие при нажатии спускового крючка",
+  "UNIT": " кг",
+  "VARIANTS": null,
+  "FILTER": 0,
+  "CATEGORY": 5
+ },
+ {
+  "ID": 35,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "Точность и эффективный диапазон",
+  "UNIT": "м",
+  "VARIANTS": null,
+  "FILTER": 0,
+  "CATEGORY": 5
+ },
+ {
+  "ID": 36,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "Длинна",
+  "UNIT": "мм",
+  "VARIANTS": null,
+  "FILTER": 1,
+  "CATEGORY": 8
+ },
+ {
+  "ID": 37,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "призм стекло",
+  "UNIT": "",
+  "VARIANTS": null,
+  "FILTER": 0,
+  "CATEGORY": 2
+ },
+ {
+  "ID": 38,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "Размах дуг",
+  "UNIT": "мм",
+  "VARIANTS": null,
+  "FILTER": 0,
+  "CATEGORY": 5
+ },
+ {
+  "ID": 39,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "Длинна корпуса (без стремени)",
+  "UNIT": "мм",
+  "VARIANTS": null,
+  "FILTER": 0,
+  "CATEGORY": 5
+ },
+ {
+  "ID": 40,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "Сила дуг",
+  "UNIT": "кгс",
+  "VARIANTS": null,
+  "FILTER": 0,
+  "CATEGORY": 5
+ },
+ {
+  "ID": 41,
+  "CREATED_AT": null,
+  "UPDATED_AT": null,
+  "HEADER": "Рабочий ход тетивы",
+  "UNIT": "мм",
+  "VARIANTS": null,
+  "FILTER": 0,
+  "CATEGORY": 5
+ }
+]

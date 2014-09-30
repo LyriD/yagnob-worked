@@ -1,0 +1,46 @@
+<%= render 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_actions do %>
+    <li><%= button_link_to 'Добавить материал',  '/admin/add_material', :icon => 'icon-plus', :id => 'admin_new_page' %></li>
+<% end %>
+
+<% content_for :page_title do %>
+    Материалы для партнеров
+<% end %>
+
+<% if @materials.any? %>
+    <table class="index responsive" id="listing_pages" data-hook>
+      <colgroup>
+        <col style="width: 40%">
+        <col style="width: 35%">
+        <col style="width: 10%">
+        <col style="width: 15%">
+      </colgroup>
+      <thead>
+      <tr data-hook="admin_pages_index_headers">
+        <th><%= Spree::Page.human_attribute_name(:title) %></th>
+        <th data-hook="admin_pages_index_header_actions" class="actions"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @materials.each do |page| %>
+          <tr data-hook="admin_pages_index_rows" class="<%= cycle('odd', 'even') %>" id="<%= dom_id page %>">
+            <td>
+              <%= page.title %>
+            </td>
+            <td class="actions" data-hook="admin_pages_index_row_actions">
+
+              <%= link_to_with_icon('edit', Spree.t(:edit), "/admin/edit_material/#{page.id}") %>
+              <%= link_to_with_icon('delete', Spree.t(:delete), "/admin/delete_material/#{page.id}", data: {confirm: 'Вы уверены?'}) %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% else %>
+    <div class="alpha twelve columns no-objects-found">
+      нет данных,
+      <%= link_to Spree.t(:add_one), '/admin/add_material' %>!
+    </div>
+<% end %>

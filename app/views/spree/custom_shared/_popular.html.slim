@@ -1,0 +1,42 @@
+h1 Популярное
+- Spree::Taxon.find_by_name('Популярное').products.each do |product|
+  section class="product supershit new awesome cool"
+    .imgWrap
+      = product_image(product, :itemprop => "image")
+    h2
+      = link_to product.name, product_url(product, :taxon_id => @taxon.try(:id))
+    .price = display_price(product)
+    a.toCart href="#" #{icon('shopping-cart')} в корзину
+
+    /кнопка добавить в корзину с вариантами цен
+
+
+    /<%= form_for :order, :url => populate_orders_path, html: { :class => 'form_s' }, remote: true do |f| %>
+    /  <% if product.variants_and_option_values(current_currency).any? and spree_current_user and spree_current_user.wholesaler %>
+    /
+    /    <% product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
+    /      <div>
+    /        <%= radio_button_tag "variant_id", variant.id, index == 0, 'data-price' => Spree::Money.new(variant.price, with_currency: true).to_s  %>
+    /
+    /        <%# radio_button_tag "products[#{product.id}]", variant.id, index == 0, 'data-price' => variant.price_in(current_currency).display_price %>
+    /        <%= variant_options variant %>
+    /        <% if variant_price variant %>
+    /          <span class="price diff"><%= variant_price variant %></span>
+    /        <% end %>
+    /      </div>
+    /    <% end %>
+    /  <% else %>
+    /    <%= hidden_field_tag "variant_id", product.master.id %>
+    /  <% end %>
+    /
+    /
+    /
+    /
+    /
+    /
+    /  <%= hidden_field_tag :quantity, 1 %>
+    /
+    /
+    /  <%= f.submit '', :class => 'cart' %>
+    /  <!--<a href="#"><div class="cart"></div></a>-->
+    /  <% end %>

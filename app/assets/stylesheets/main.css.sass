@@ -1,0 +1,622 @@
+@import normalize
+@import compass
+@import susy
+@import susy-settings
+@import breakpoint
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700|Roboto:400,300,500,700&subset=latin,cyrillic)
+@import font-awesome-sprockets
+@import font-awesome
+
+
+$base-font-size: 14px
+$base-line-height: 21px
++establish-baseline
+$medium: 1200px
+$large: 1500px
+
+$pt: 'PT Sans', sans-serif
+$roboto: 'Roboto', sans-serif
+
+@include border-box-sizing
+
+
+html
+  font-family: $roboto
+  font-weight: 300
+
+
+h1, h2, h3, h4, h5
+  font-family: $pt
+  font-weight: 400
+
+a
+  color: inherit
+  text-decoration: none
+
+.fotorama__html div, .fotorama__html a
+  display: block
+  height: 100%
+  background: url('blank.gif')
+
+header
+  position: relative
+  #logo
+    position: absolute
+    background: url("logo.png") no-repeat
+    height: 49px
+    +span(2)
+    background-size: contain
+
+
+  #mainMenu
+    padding: 0
+    +push(2)
+    +rhythm
+    list-style: none
+    margin-top: 1em
+    +clearfix
+    li
+      &.active
+        a
+          border-top: 1px solid #000
+          border-bottom: 1px solid #000
+      display: block
+      float: left
+      margin-left: 10px
+      &:first-child
+        margin-left: 0
+
+      a
+        padding: 4px 8px
+        font-family: $pt
+        color: inherit
+        text-decoration: none
+        display: inline-block
+
+#container
+  +leader
+  +layout($susy)
+  +container()
+  +breakpoint($medium)
+    +layout($susy 16)
+    +container()
+  +breakpoint($large)
+    +layout($susy 20)
+    +container()
+  +clearfix
+  +show-grid(overlay)
+
+
+
+header
+  +full
+
+footer
+  +full
+  position: relative
+  background: #333
+  color: #fff
+  height: 140px
+  +leader
+  a.logo
+    position: absolute
+    top: 24px
+    left: 40px
+    font-size: 24px
+    font-family: $pt
+  .slogan
+    position: absolute
+    left: 40px
+    top: 70px
+    +span(4)
+    font-size: 12px
+  .phone
+    position: absolute
+    right: 40px
+    top: 80px
+    font-size: 24px
+  menu
+    margin: 0
+    position: absolute
+    list-style: none
+    top: 21px
+    right: 40px
+    li
+      &.active
+        a
+          border-top: 1px solid #fff
+          border-bottom: 1px solid #fff
+      display: block
+      float: left
+      margin-left: 10px
+      &:first-child
+        margin-left: 0
+
+      a
+        padding: 4px 8px
+        font-family: $pt
+        color: inherit
+        text-decoration: none
+        display: inline-block
+
+
+
+
+#leftMenu
+  margin-top: -.8rem
+  h2
+    border-top: 1px solid #000
+    border-bottom: 1px solid #000
+    font-weight: 400
+    text-align: center
+    text-transform: uppercase
+    font-size: 1rem
+    padding: .5rem 0
+  +span(2)
+  .jstree-default-small .jstree-node
+    margin-left: 8px
+  & > ul
+    +trailer(2)
+  a
+    //+adjust-font-size-to(12px)
+    font-family: $pt
+    font-size: 14px
+
+#breadcrumbs
+  +span(10 of 12 last)
+  +clearfix
+  +breakpoint($medium)
+    +span(14 of 16 last)
+  +breakpoint($large)
+    +span(18 of 20 last)
+  body.index &, body.catalog &
+    display: none
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+    font-size: 12px
+    padding-top: 6px
+    padding-bottom: 10px
+    font-weight: 400
+    li
+      display: inline-block
+    i
+      padding: 0 10px
+
+
+
+#popularProducts
+  display: none
+  +span(last 2)
+  +push(1)
+  body.articles &, body.article &, body.catalog &
+    display: block
+  h1
+    +adjust-font-size-to(20px)
+    line-height: 1.2em
+    border-bottom: 1px solid #ccc
+    padding-bottom: .2em
+
+
+#content
+  +span(10 of 12 last)
+  +clearfix
+  +breakpoint($medium)
+    +span(14 of 16 last)
+  +breakpoint($large)
+    +span(18 of 20 last)
+  body.articles &, body.article &, body.catalog &
+    +span(7)
+    +breakpoint($medium)
+      +span(11)
+    +breakpoint($large)
+      +span(15)
+
+
+
+section.article
+  +clearfix
+  img
+    +span(3)
+    +breakpoint($medium)
+      +span(5)
+    +breakpoint($large)
+      +span(7)
+  .content
+    +span(last 4)
+    +breakpoint($medium)
+      +span(last 6)
+    +breakpoint($large)
+      +span(last 8)
+  img
+    padding-top: 1em
+    display: inline
+  h1
+    +adjust-font-size-to(26px)
+    font-weight: 400
+    font-family: $pt
+    line-height: 1.2em
+    margin-bottom: 0
+  p
+    +adjust-font-size-to(12px)
+
+
+section.product
+  text-align: center
+  +trailer(2)
+  .imgWrap
+    height: 140px
+    width: 100%
+    white-space: nowrap
+    margin: 1em 0
+    &:before
+      content: ''
+      display: inline-block
+      height: 100%
+      vertical-align: middle
+    img
+      vertical-align: middle
+      max-height: 140px
+      max-width: 140px
+  h2
+    +adjust-font-size-to(14px)
+    height: 2em
+    font-weight: 700
+  .price
+    font-weight: 700
+    color: #b20000
+    margin-bottom: 1em
+  a.toCart
+    display: block
+    border-radius: 4px
+    background: #eee
+    font-family: $pt
+    color: #333
+    +adjust-font-size-to(16px)
+    padding: .3em
+    i
+      padding-right: .3em
+
+
+body.article
+  +trailer
+  #content > h1
+    +adjust-font-size-to(30px)
+
+    font-family: $pt
+    font-weight: 400
+  .author
+    border-top: 1px solid #eee
+    color: #bbb
+    +adjust-font-size-to(12px)
+    text-align: right
+
+
+body.products
+  .row
+    +clearfix
+  section
+    +gallery(2 of 10)
+    +breakpoint($medium)
+      +gallery(2 of 14)
+    +breakpoint($large)
+      +gallery(2 of 18)
+
+  #content > h2
+    position: relative
+    border-bottom: 1px solid #ccc
+    color: #666
+    padding-left: 10px
+    padding-bottom: 4px
+
+
+
+body.product
+  .left
+    +span(5)
+    +breakpoint($medium)
+      +span(7)
+    +breakpoint($large)
+      +span(9)
+    img
+      width: 100%
+    section
+      +gallery(2 of 5)
+      +breakpoint($medium)
+        +gallery(2 of 7)
+      +breakpoint($large)
+        +gallery(2 of 9)
+
+  .right
+    +span(last 5)
+    +breakpoint($medium)
+      +span(last 7)
+    +breakpoint($large)
+      +span(last 9)
+    h1
+      line-height: 1.2em
+    a.brand
+      display: block
+      +adjust-font-size-to(12px)
+      line-height: 30px
+      font-weight: 700
+      +clearfix
+      img
+        max-height: 30px
+        display: block
+        float: left
+        margin-right: 10px
+    .price
+      +trailer
+      .amount
+        +span(2)
+        text-align: right
+        font-weight: 700
+        color: #b20000
+        font-size: 20px
+      input
+        +span(1)
+      button
+        border: none
+        width: 140px
+        border-radius: 4px
+        background: #333
+        color: #fff
+        line-height: 21px
+        i
+          margin-right: 10px
+    table.specs
+      tr
+        &:nth-child(2n)
+          background: #f1f1f1
+        td
+          font-size: 12px
+          padding: 6px 20px
+          &.type
+            +span(2)
+            font-weight: 700
+          &.value
+            +span(last 3)
+
+
+    .files
+      +trailer
+      a
+        font-weight: 700
+        margin-right: 50px
+        i
+          margin-right: 2px
+
+  .similarProducts
+    +clearfix
+    +leader(1)
+
+
+body.partners
+  img
+    width: 100%
+
+body.partnership
+  .left
+    +clearfix
+    +span(4)
+    +breakpoint($medium)
+      +span(8)
+    +breakpoint($large)
+      +span(12)
+    .row
+      +clearfix
+      +leader(2)
+      section
+        +span(last 4)
+        +trailer(2)
+        +breakpoint($medium)
+          +gallery(4 of 8)
+        +breakpoint($large)
+          +gallery(4 of 12)
+        img
+          +span(2)
+        .content
+          +span(last 2)
+          h1
+            +adjust-font-size-to(24px)
+            line-height: 1.2em
+          p
+            +adjust-font-size-to(12px)
+          a.load
+            color: #fff
+            background: #333
+            border-radius: 4px
+            text-align: center
+            border: none
+            width: 140px
+            display: inline-block
+            line-height: 2em
+
+
+  .right
+    +clearfix
+    +span(last 5)
+    +push(1)
+    .row
+      +trailer()
+    input, textarea
+      width: 100%
+    textarea
+      height: 10em
+    label
+      font-family: $pt
+      +adjust-font-size-to(14px)
+      font-weight: 700
+    button
+      color: #fff
+      background: #333
+      border-radius: 4px
+      text-align: center
+      border: none
+      width: 140px
+
+
+body.contacts
+  .left
+    +span(7)
+    +breakpoint($medium)
+      +span(11)
+    +breakpoint($large)
+      +span(15)
+    img
+      width: 100%
+  .right
+    +push(1)
+    +span(last 2)
+    .row
+      position: relative
+      +trailer
+      i
+        position: absolute
+        right: 160px
+        top: 0
+        font-size: 1.4em
+
+      p
+        margin: 0
+
+body.catalog
+  & #content > div > h2
+    border-bottom: 1px solid #ccc
+    padding-bottom: .2em
+    text-align: left
+  #leftMenu
+    display: none
+  #content
+    +span(9)
+    +breakpoint($medium)
+      +span(13)
+    +breakpoint($large)
+      +span(17)
+  .brands
+    +span(2)
+    text-align: center
+    a
+      display: block
+      +trailer
+      img
+        max-width: 100%
+        max-height: 100px
+  .categories
+    +span(last 6)
+    +push(1)
+    +breakpoint($medium)
+      +span(last 10)
+    +breakpoint($large)
+      +span(last 14)
+    section
+      +trailer(2)
+      position: relative
+      +gallery(2 of 8)
+      +breakpoint($medium)
+        +gallery(2 of 12)
+      +breakpoint($large)
+        +gallery(2 of 16)
+      img
+        width: 100%
+      h2
+        position: relative
+        z-index: 1
+        +adjust-font-size-to(20px)
+        background: rgba(255,255,255,.9)
+        margin: 0
+        margin-top: -40px
+        line-height: 30px
+        padding: 5px 10px
+      ul
+        padding: 0 10px
+        margin: 0
+        list-style: none
+        li
+          line-height: 1.8em
+
+
+
+
+
+body.index
+  #content > h1
+    +adjust-font-size-to(24px)
+    border-top: 1px solid #000
+    border-bottom: 1px solid #000
+    text-transform: uppercase
+    text-align: center
+  .fotorama
+    img
+      display: block
+  i.prevPage, i.nextPage
+    cursor: pointer
+    &.disabled
+      visibility: hidden
+    &.prevPage
+      padding-right: 50px
+    &.nextPage
+      padding-left: 50px
+  .products
+    .scrollbar
+      width: 100%
+      .handle
+        width: 100px
+        height: 100%
+    .frame
+      width: 100%
+      padding: 0
+      .slidee
+        margin: 0
+        padding: 0
+        height: 100%
+        list-style: none
+        li
+          float: left
+          margin: 0 5px 0 0
+          padding: 0
+          width: 220px
+          height: 100%
+          text-align: center
+          img
+            height: 130px
+            max-width: 220px
+          h2
+            +adjust-font-size-to(20px)
+            font-weight: 700
+            line-height: 1.3em
+          p
+            +adjust-font-size-to(12px)
+            text-align: left
+          .price
+            color: #8b0000
+            +adjust-font-size-to(20px)
+            font-weight: 700
+
+  .articles
+    section
+      +gallery(5 of 10)
+      +breakpoint($medium)
+        +gallery(7 of 14)
+      +breakpoint($large)
+        +gallery(10 of 18)
+    img
+      display: block
+      +span(2)
+      +breakpoint($medium)
+        +span(3)
+      +breakpoint($large)
+        +span(4)
+    .content
+      +span(last 3)
+      +breakpoint($medium)
+        +span(last 4)
+      +breakpoint($large)
+        +span(last 6)
+
+
+body.cart
+
+
