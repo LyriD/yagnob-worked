@@ -1,0 +1,7 @@
+- content_for :bodyClass, 'products'
+
+h1 = @taxon.name
+- unless params[:keywords].present?
+  - cache [I18n.locale, @taxon] do
+    = render partial: 'taxon_slim', collection: @taxon.children, as: :taxon
+

@@ -53,10 +53,10 @@
   h1 = @product.name
   - @product.taxons.where(parent_id: 12).first.name
   a.brand href="#"
-    = image_tag @product.taxons.where(parent_id: 12).first.url(:preview)
+    = image_tag @product.taxons.where(parent_id: 12).first.icon.url(:normal) unless @product.taxons.where(parent_id: 12).empty?
     |
     = @product.taxons.where(parent_id: 12).first.name
-  p = @product.description
+  p = raw strip_tags @product.description
   / В этом блоке тоже можешь вставить как там по дефолту, я скорее всего поправлю
   form.price
     .amount = display_price(@product)
@@ -75,8 +75,8 @@
       | сертификат
   / Выведи как она есть, я сам кастомизирую
   table.specs
-    -7.times
+    - @product_properties.each do |product_property|
       tr
-        td.type #{['длина клинка', ' ширина клинка', 'толщина обуха', 'сталь', 'рукоятка'].sample}
-        td.value #{['100 мм','27 мм','230 мм','коррозионно-стойкая','дерево'].sample}
+        td.type = product_property.property.name
+        td.value = product_property.value + ' ' + product_property.property.presentation
 

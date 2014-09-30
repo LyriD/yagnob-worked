@@ -1,0 +1,9 @@
+/ здесь указываешь класс или классы типа новинка, супертовар итд
+section class="product supershit new awesome cool"
+  .imgWrap
+    = link_to product_image(product, :itemprop => "image"), product_url(product, :taxon_id => @taxon.try(:id))
+  h2
+    = link_to product.name, product_url(product, :taxon_id => @taxon.try(:id))
+  .price = display_price(product)
+  a.toCart href="#" #{icon('shopping-cart')} в корзину
+
