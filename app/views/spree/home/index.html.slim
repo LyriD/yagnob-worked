@@ -11,6 +11,12 @@ h1
     .handle
   #basic.frame
     ul.slidee
+      - Spree::Taxon.find_by_name('Новинки').products.each do |product|
+        = product.name
+        = display_price(product)
+        = image_tag product.images.first.attachment.url(:product)
+        = product.description
+      /- if Spree::Taxon.find_by_name('Новинки')
       - 20.times
         li
           img src="http://lorempixel.com/#{rand(300..600)}/#{rand(300..600)}"
@@ -19,5 +25,4 @@ h1
           .price 15 000 р.
 h1 Последние публикации
 .articles
-  - 7.times
-    /= render 'shared/article'
+  = render partial: 'spree/custom_shared/articles', collection: Article.all.limit(7), :as => :article

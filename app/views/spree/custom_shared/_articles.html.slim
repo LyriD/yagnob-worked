@@ -1,0 +1,7 @@
+section.article
+  = image_tag article.spree_images.first.attachment.url(:article_index) unless article.spree_images.empty?
+  .content
+    h1
+      = link_to article.title, "/articles/#{article.slug}"
+    p = raw article.teaser
+
