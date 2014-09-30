@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title YagnobApp
+    title = title
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'http://api-maps.yandex.ru/2.1/?lang=ru_RU'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
@@ -22,7 +22,6 @@ html
       #content
         = yield
       #popularProducts
-        h1 Популярное
         = yield :popularProducts
       footer
         a.logo href="#" ООО Ягноб

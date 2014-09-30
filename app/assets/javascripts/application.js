@@ -18,7 +18,6 @@
 //= require fotorama/fotorama
 //= require jstree/dist/jstree.min
 //= require sly/dist/sly.min
-//= require_tree .
 
 $(function(){
     $frame = $('.frame');

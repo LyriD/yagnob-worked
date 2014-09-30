@@ -11,18 +11,13 @@ h1
     .handle
   #basic.frame
     ul.slidee
-      - Spree::Taxon.find_by_name('Новинки').products.each do |product|
-        = product.name
-        = display_price(product)
-        = image_tag product.images.first.attachment.url(:product)
-        = product.description
-      /- if Spree::Taxon.find_by_name('Новинки')
-      - 20.times
+      - Spree::Taxon.where(name: 'Новинки').first.products.each do |product|
         li
-          img src="http://lorempixel.com/#{rand(300..600)}/#{rand(300..600)}"
-          h2: a href="#" PCP BP2263 Benjamin Marauder
-          p Пневматическая винтовка Crosman PCP BP 2263 Benjamin Marauder обладает изящными и одновременно с этим строгими чертами.
-          .price 15 000 р.
+          = image_tag product.images.first.attachment.url(:product)
+          h2
+            = link_to product.name, product_url(product)
+          p = raw strip_tags product.description
+          .price = display_price(product)
 h1 Последние публикации
 .articles
   = render partial: 'spree/custom_shared/articles', collection: Article.all.limit(7), :as => :article

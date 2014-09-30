@@ -20,13 +20,6 @@ GIT
       spree_core (~> 2.3.0)
 
 GIT
-  remote: git://github.com/spree/spree_jirafe.git
-  revision: 7730cb3c2bc53747f19d7432aee4c10f91de2365
-  specs:
-    spree_jirafe (0.0.1)
-      spree (~> 2.0)
-
-GIT
   remote: git://github.com/spree/spree_static_content.git
   revision: 2161ecdbeb381b86f7027305b632c8ecbe39b759
   branch: 2-3-stable
@@ -393,7 +386,6 @@ DEPENDENCIES
   spree_editor!
   spree_gateway!
   spree_i18n!
-  spree_jirafe!
   spree_static_content!
   spring
   sprockets (~> 2.12)

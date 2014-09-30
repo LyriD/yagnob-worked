@@ -9,7 +9,7 @@ html
     == meta_data_tags
     = canonical_tag(current_store.url)
     = csrf_meta_tags
-  body class="#{yield :bodyClass}"
+  body class="catalog"
     #container
       header
         a#logo href="/"
@@ -19,7 +19,6 @@ html
 
 
       #content
-        - content_for :bodyClass, 'catalog'
         .brands
           h2 Бренды
           - Spree::Taxonomy.find_by_name('Бренды').root.children.each do |brand|
