@@ -1,11 +1,11 @@
 <% max_level = 3 %>
-<nav id="taxonomies" class="sidebar-item" data-hook>
   <% Spree::Taxonomy.all.each do |taxonomy| %>
     <% unless taxonomy.name == 'Специальные товары'  %>
     <% cache [I18n.locale, taxonomy, max_level] do %>
       <h2><%= taxonomy.name %></h2>
+      <div class="categories">
       <%= taxons_tree(taxonomy.root, @taxon, max_level) %>
+      </div>>
     <% end %>
     <% end %>
   <% end %>
-</nav>

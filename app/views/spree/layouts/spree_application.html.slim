@@ -1,12 +1,11 @@
 doctype html
 html
   head
-    title = title
+    title YagnobApp
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'http://api-maps.yandex.ru/2.1/?lang=ru_RU'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = javascript_include_tag 'spree/frontend/all', 'data-turbolinks-track' => true
-    == meta_data_tags
+    == raw meta_data_tags
     = canonical_tag(current_store.url)
     = csrf_meta_tags
   body class="#{yield :bodyClass}"
@@ -17,113 +16,14 @@ html
           li: a href="/" Главная
           = render :partial => "spree/static_content/static_content_list", :collection => Spree::Page.visible.header_links, :as => :page
       #leftMenu
-        = render :partial => 'spree/shared/taxonomies'
-
-
-        h2 Категории
-        .categories
-          ul
-            li
-              a href="/products" ножи
-              ul
-                li: a href="/partnership" складные
-                li: a href="#" нескладные
-                li: a href="#" выкидные
-                li: a href="#" разделочные
-                li: a href="#" бабочка
-                li: a href="#" метательные
-            li
-              a href="#" бинокли
-              ul
-                li: a href="#" складные
-                li: a href="#" нескладные
-                li: a href="#" выкидные
-                li: a href="#" разделочные
-                li: a href="#" бабочка
-                li: a href="#" метательные
-            li
-              a href="#" луки
-              ul
-                li: a href="#" складные
-                li: a href="#" нескладные
-                li: a href="#" выкидные
-                li: a href="#" разделочные
-                li: a href="#" бабочка
-                li: a href="#" метательные
-            li
-              a href="#" пневматика
-              ul
-                li: a href="#" складные
-                li: a href="#" нескладные
-                li: a href="#" выкидные
-                li: a href="#" разделочные
-                li: a href="#" бабочка
-                li: a href="#" метательные
-        h2 Бренды
-        .brands
-          ul
-            li
-              a href="#" Yagnob
-              ul
-                li
-                  a href="#" ножи
-                  ul
-                    li: a href="#" складные
-                    li: a href="#" нескладные
-                    li: a href="#" выкидные
-                    li: a href="#" разделочные
-                    li: a href="#" бабочка
-                    li: a href="#" метательные
-                li: a href="#" бинокли
-                li: a href="#" пневматика
-                li: a href="#" луки
-                li: a href="#" охота
-                li: a href="#" рыбалка
-            li
-              a href="#" Umarex
-              ul
-                li: a href="#" складные
-                li: a href="#" нескладные
-                li: a href="#" выкидные
-                li: a href="#" разделочные
-                li: a href="#" бабочка
-                li: a href="#" метательные
-            li
-              a href="#" Hatsan
-              ul
-                li: a href="#" складные
-                li: a href="#" нескладные
-                li: a href="#" выкидные
-                li: a href="#" разделочные
-                li: a href="#" бабочка
-                li: a href="#" метательные
-            li
-              a href="#" Gamo
-              ul
-                li: a href="#" складные
-                li: a href="#" нескладные
-                li: a href="#" выкидные
-                li: a href="#" разделочные
-                li: a href="#" бабочка
-                li: a href="#" метательные
-
-
+        = render :partial => 'spree/shared/taxonomies' unless yield(:bodyClass) == 'catalog'
       #breadcrumbs
         = breadcrumbs(@taxon, "#{icon 'fa fa-angle-right'}")
-        /ul
-        /  li: a href="#" #{icon 'home'}
-        /  = icon 'angle-right'
-        /  li: a href="#" каталог
-        /  = icon 'angle-right'
-        /  li: a href="#" ножи
-        /  = icon 'angle-right'
-        /  li: a href="#": span складные
       #content
         = yield
       #popularProducts
         h1 Популярное
-        - 5.times
-          /= render 'shared/product'
+        = yield :popularProducts
       footer
         a.logo href="#" ООО Ягноб
         .slogan оптовая продажа и производство спортивных, туристиеских и охотничьих товаров
