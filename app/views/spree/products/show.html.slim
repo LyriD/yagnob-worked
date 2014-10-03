@@ -63,10 +63,10 @@
 
   = render 'spree/custom_shared/cart_form_custom'
   .files
-    a.manual href="#"
+    a.manual href="#{@product.instruction}" target="_blank"
       =' icon 'wrench'
       | инструкция
-    a.certificate href="#"
+    a.certificate href="#{@product.certificate}" target="_blank"
       =' icon 'file-text'
       | сертификат
   / Выведи как она есть, я сам кастомизирую

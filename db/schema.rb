@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930130011) do
+ActiveRecord::Schema.define(version: 20141002160320) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140930130011) do
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "file"
   end
 
   create_table "spree_addresses", force: true do |t|
@@ -463,6 +464,8 @@ ActiveRecord::Schema.define(version: 20140930130011) do
     t.integer  "shipping_category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "instruction"
+    t.string   "certificate"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"

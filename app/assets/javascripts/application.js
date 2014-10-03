@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require fotorama/fotorama
 //= require jstree/dist/jstree.min
+//= require spree/frontend/spree_contact_us
 //= require sly/dist/sly.min
 
 $(function(){

@@ -61,6 +61,13 @@ class Spree::Admin::PagesController < Spree::Admin::ResourceController
 
   def create_material
     @material = Material.new(material_params)
+    unless params[:material][:file].blank?
+    require 'fileutils'
+    tmp = params[:material][:file].tempfile
+    file = File.join("public/materials", params[:material][:file].original_filename)
+    FileUtils.cp tmp.path, file
+    @material.file = '/materials/'+file.split('/').last
+    end
     respond_to do |format|
       if @material.save
         format.html { redirect_to '/admin/materials', notice: 'Материал добавлен' }
@@ -72,6 +79,14 @@ class Spree::Admin::PagesController < Spree::Admin::ResourceController
 
   def update_material
     @material = Material.find(params[:material][:id])
+    unless params[:material][:file].blank?
+    require 'fileutils'
+    tmp = params[:material][:file].tempfile
+    file = File.join("public/materials", params[:material][:file].original_filename)
+    FileUtils.cp tmp.path, file
+    @material.file = '/materials/'+file.split('/').last
+    end
+
     respond_to do |format|
       if  @material.update(material_params)
         format.html { redirect_to '/admin/materials', notice: 'Материал отредактирован' }

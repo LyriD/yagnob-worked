@@ -28,12 +28,17 @@
               <%= f.error_message_on :text %>
           <% end %>
 
+          <%= f.field_container :file do %>
+              <%= f.label :file %>
+              <%= f.file_field :file %>
+              <%= f.error_message_on :file %>
+              <%= link_to f.object.file.split('/').last, f.object.file, target: '_blank' if f.object.file %>
+          <% end %>
+
           <%= f.fields_for :spree_images do |image_form| %>
               <br><br>
               <%= image_tag(image_form.object.attachment.url(:product)) unless image_form.object.new_record? %>
               <%= image_form.file_field :attachment if image_form.object.new_record? %><br>
-              <%= image_form.label 'ссылка'  %>
-              <%= image_form.text_field :alt %>
               <%= image_form.hidden_field :viewable_type, value: 'Material' %>
               <%= image_form.link_to_remove "Удалить изображение" %>
           <% end %>

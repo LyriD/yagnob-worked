@@ -35,6 +35,13 @@ GIT
       sass (>= 3.3.0, < 3.5)
 
 GIT
+  remote: https://github.com/jdutil/spree_contact_us
+  revision: b5298e575f6d1663e0630054f7835c6a32981288
+  specs:
+    spree_contact_us (2.2.0)
+      spree_core (~> 2.3.0.beta)
+
+GIT
   remote: https://github.com/rails/sass-rails.git
   revision: 423178729e7b84addcee78b33891644b1fc1705b
   specs:
@@ -383,6 +390,7 @@ DEPENDENCIES
   slim
   spree (= 2.3.2)
   spree_auth_devise!
+  spree_contact_us!
   spree_editor!
   spree_gateway!
   spree_i18n!

@@ -1,0 +1,65 @@
+doctype html
+html
+  head
+    title = title
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'http://api-maps.yandex.ru/2.1/?lang=ru_RU'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    == raw meta_data_tags
+    = canonical_tag(current_store.url)
+    = csrf_meta_tags
+  body class="partnership"
+    #container
+      header
+        a#logo href="/"
+        menu#mainMenu
+          li: a href="/" Главная
+          = render :partial => "spree/static_content/static_content_list", :collection => Spree::Page.visible.header_links, :as => :page
+      #leftMenu
+        = render :partial => 'spree/shared/taxonomies' unless yield(:bodyClass) == 'catalog'
+      #breadcrumbs
+        = breadcrumbs(@taxon, "#{icon 'fa fa-angle-right'}")
+      #content
+        - @page = Spree::Page.visible.find_by_slug!(request.path)
+        h1 = @page.title
+        .left
+          p = raw @page.body
+          .row
+            - Material.all.each do |m|
+              section
+                = image_tag m.spree_images.attachment.url(:product)
+                .content
+                  h1 = m.title
+                  p = m.text
+                  = link_to 'скачать', m.file, target: '_blank', class: 'load'
+        .right
+          h2 Станьте нашим дилером
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+          - @contact = Spree::ContactUs::Contact.new
+          = form_for @contact, :url => contacts_path, :html => { :novalidate => '' } do |f|
+            .row
+              label наименование организации
+              = f.text_field :organisation
+            .row
+              label контактное лицо
+              = f.text_field :name
+            .row
+              label e-mail
+              = f.text_field :email
+            .row
+              label телефон для связи
+              = f.text_field :phone
+            .row
+              label дополнительная информация
+              = f.text_area :message
+            = f.submit 'отправить заявку'
+
+
+      #popularProducts
+        = yield :popularProducts
+      footer
+        a.logo href="#" ООО Ягноб
+        .slogan оптовая продажа и производство спортивных, туристиеских и охотничьих товаров
+        .phone +7 (495) 232-23-22
+        menu
+          = render :partial => "spree/static_content/static_content_list", :collection => Spree::Page.visible.footer_links, :as => :page
