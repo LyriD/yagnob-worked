@@ -70,7 +70,7 @@ gem 'spree_editor', github: 'spree/spree_editor', branch: '2-3-stable'
 
 gem 'spree_contact_us', :git => 'https://github.com/jdutil/spree_contact_us'
 
-gem 'spree_mail_settings', :git => 'https://github.com/spree-contrib/spree_mail_settings'
+# gem 'spree_mail_settings', :git => 'https://github.com/spree-contrib/spree_mail_settings'
 
 
 # gem 'spree_simple_dash', :git => 'git@github.com:spree/spree_simple_dash.git'

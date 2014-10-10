@@ -9,7 +9,7 @@
       - @product.taxons.first.products.limit(6).each do |p|
         section class="product supershit new awesome cool"
           .imgWrap
-            = product_image(p, :itemprop => "image")
+            = link_to product_image(p, :itemprop => "image"), product_url(p, :taxon_id => @taxon.try(:id))
           h2
             = link_to p.name, product_url(p, :taxon_id => @taxon.try(:id))
           .price = display_price(p)
@@ -17,45 +17,13 @@
 
 
 
-
-          /<%= form_for :order, :url => populate_orders_path, html: { :class => 'form_s' }, remote: true do |f| %>
-          /  <% if product.variants_and_option_values(current_currency).any? and spree_current_user and spree_current_user.wholesaler %>
-          /
-          /    <% product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
-          /      <div>
-          /        <%= radio_button_tag "variant_id", variant.id, index == 0, 'data-price' => Spree::Money.new(variant.price, with_currency: true).to_s  %>
-          /
-          /        <%# radio_button_tag "products[#{product.id}]", variant.id, index == 0, 'data-price' => variant.price_in(current_currency).display_price %>
-          /        <%= variant_options variant %>
-          /        <% if variant_price variant %>
-          /          <span class="price diff"><%= variant_price variant %></span>
-          /        <% end %>
-          /      </div>
-          /    <% end %>
-          /  <% else %>
-          /    <%= hidden_field_tag "variant_id", product.master.id %>
-          /  <% end %>
-          /
-          /
-          /
-          /
-          /
-          /
-          /  <%= hidden_field_tag :quantity, 1 %>
-          /
-          /
-          /  <%= f.submit '', :class => 'cart' %>
-          /  <!--<a href="#"><div class="cart"></div></a>-->
-          /  <% end %>
-
-
 .right
   h1 = @product.name
-  - @product.taxons.where(parent_id: 12).first.name
+  - brand = @product.taxons.where(parent_id: 12).first
   a.brand href="#"
-    = image_tag @product.taxons.where(parent_id: 12).first.icon.url(:normal) unless @product.taxons.where(parent_id: 12).empty?
+    = link_to(image_tag(brand.icon.url(:normal)), seo_url(brand)) unless @product.taxons.where(parent_id: 12).empty?
     |
-    = @product.taxons.where(parent_id: 12).first.name
+    = link_to brand.name, seo_url(brand)
   p = raw strip_tags @product.description
   / В этом блоке тоже можешь вставить как там по дефолту, я скорее всего поправлю
   /form.price

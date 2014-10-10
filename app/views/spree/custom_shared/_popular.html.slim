@@ -2,7 +2,7 @@ h1 Популярное
 - Spree::Taxon.find_by_name('Популярное').products.each do |product|
   section class="product supershit new awesome cool"
     .imgWrap
-      = product_image(product, :itemprop => "image")
+      = link_to product_image(product, :itemprop => "image"), product_url(product, :taxon_id => @taxon.try(:id))
       h2
         = link_to product.name, product_url(product, :taxon_id => @taxon.try(:id))
       .price = display_price(product)
