@@ -21,6 +21,7 @@
       <%= configurations_sidebar_menu_item Spree.t(:stock_locations), spree.admin_stock_locations_path %>
       <%= configurations_sidebar_menu_item Spree.t(:analytics_trackers), admin_trackers_path %>
       <li class="<%= 'active' if @articles or @article %>"><a href="/admin/articles">Статьи</a></li>
+      <li class="<%= 'active' if @baloons or @baloon %>"><a href="/admin/baloons">Метки на карте</a></li>
       <li class="<%= 'active' if @materials or @material %>"><a href="/admin/materials">Материалы для партнеров</a></li>
 
     </ul>

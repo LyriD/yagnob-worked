@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  # resources :baloons
+
   # resources :articles
   # resources :materials
 
@@ -32,6 +34,13 @@ Rails.application.routes.draw do
   get '/admin/delete_article/:article_item_id' => 'spree/admin/pages#delete_article'
   post '/articles' => 'articles#create_article'
   patch '/articles' => 'spree/admin/pages#update_article'
+
+  get '/admin/baloons' => 'spree/admin/pages#baloons_index'
+  get '/admin/add_baloon' => 'spree/admin/pages#add_baloon'
+  get '/admin/edit_baloon/:baloon_item_id' => 'spree/admin/pages#edit_baloon'
+  get '/admin/delete_baloon/:baloon_item_id' => 'spree/admin/pages#delete_baloon'
+  post '/baloons' => 'spree/admin/pages#create_baloon'
+  patch '/baloons' => 'spree/admin/pages#update_baloon'
 
 
   get '/admin/materials' => 'spree/admin/pages#materials_index'

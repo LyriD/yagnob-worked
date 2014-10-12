@@ -105,6 +105,29 @@ module Spree
         end.join("\n").html_safe
       end
     end
+    def taxons_tree2(root_taxon, current_taxon, max_level = 1)
+      content_tag :ul do
+        root_taxon.children.map do |taxon|
+          css_class = (current_taxon && current_taxon.self_and_ancestors.include?(taxon)) ? 'current' : nil
+          content_tag :li, class: css_class do
+           link_to(taxon.name, seo_url(taxon)) +
+           taxons_tree_br(taxon, current_taxon)
+          end
+        end.join("\n").html_safe
+      end
+    end
+    def taxons_tree_br(brand, current_taxon)
+      content_tag :ul do
+
+        Spree::Taxon.find_by_name('Категории').children.map do |taxon|
+          css_class = (current_taxon && current_taxon.self_and_ancestors.include?(taxon)) ? 'current' : nil
+          content_tag :li, class: css_class do
+            link_to(taxon.name, seo_url(taxon))
+                # taxons_tree(taxon, current_taxon, max_level - 1)
+          end
+        end.join("\n").html_safe
+      end
+    end
 
     def available_countries
       checkout_zone = Zone.find_by(name: Spree::Config[:checkout_zone])

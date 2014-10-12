@@ -1,0 +1,58 @@
+doctype html
+html
+  head
+    title = title
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'http://api-maps.yandex.ru/2.1/?lang=ru_RU'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    == raw meta_data_tags
+    = canonical_tag(current_store.url)
+    = csrf_meta_tags
+  body class="contacts"
+    #container
+      header
+        a#logo href="/"
+        menu#mainMenu
+          li: a href="/" Главная
+          = render :partial => "spree/static_content/static_content_list", :collection => Spree::Page.visible.header_links, :as => :page
+      #leftMenu
+        = render :partial => 'spree/shared/taxonomies' unless yield(:bodyClass) == 'catalog'
+      #breadcrumbs
+        = breadcrumbs(@taxon, "#{icon 'fa fa-angle-right'}")
+      #content
+        - @page = Spree::Page.visible.find_by_slug!(request.path)
+
+
+        h1 Контактная информация
+        .left
+          script type="text/javascript" charset="utf-8" src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=ge2QiFTZQeZQMu7DhvttlL7qwghPQNDK&width=100%&height=450"
+          p ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus orci velit, in pretium turpis posuere quis. Quisque vel velit efficitur justo pharetra scelerisque. Pellentesque id purus malesuada, egestas ex eu, fermentum dolor. Nulla facilisi. Aliquam hendrerit, lacus vel luctus accumsan, odio enim lobortis massa, ac auctor leo lacus non nulla. Proin vestibulum ligula id est aliquam elementum. Nullam ultrices arcu non risus cursus, sed euismod sapien facilisis. Cras faucibus sapien ac iaculis consequat. Nam ullamcorper tortor et risus posuere, et convallis erat sagittis.
+          p quis turpis sit amet mi posuere elementum. Nulla ac dignissim nisi. Sed quis metus pellentesque, ornare nibh a, facilisis magna. Phasellus faucibus metus eget dolor fringilla fermentum. Interdum et malesuada fames ac ante ipsum primis in faucibus. In velit est, hendrerit eu risus at, volutpat consectetur felis. Suspendisse elementum lorem non urna tincidunt, in tempus augue efficitur. Quisque vitae velit tempor, tristique velit quis, ornare dolor.
+        .right
+          .row
+            = icon('mobile')
+            p +7 (495) 649-06-96
+            p +7 (495) 966-04-98
+          .row
+            = icon('envelope')
+            p: a href="mailto:sales@yagnob.ru" sales@yagnob.ru
+          .row
+            = icon('map-marker')
+            p Москва,
+            p Варшавское шоссе,
+            p ул. Дорожная, 60 строение 4,
+            p этаж 1, офис 6
+          .row
+            = icon('clock-o')
+            p с 9:00 до 18:00, без обеда и выходных
+
+
+
+      #popularProducts
+        = yield :popularProducts
+      footer
+        a.logo href="#" ООО Ягноб
+        .slogan оптовая продажа и производство спортивных, туристиеских и охотничьих товаров
+        .phone +7 (495) 232-23-22
+        menu
+          = render :partial => "spree/static_content/static_content_list", :collection => Spree::Page.visible.footer_links, :as => :page

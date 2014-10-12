@@ -12,6 +12,17 @@ class Spree::Admin::PagesController < Spree::Admin::ResourceController
   def add_article
     @article = Article.new
   end
+  def baloons_index
+    @baloons = Baloon.all
+  end
+
+  def edit_baloon
+    @baloon = Baloon.find(params[:baloon_item_id])
+  end
+
+  def add_baloon
+    @baloon = Baloon.new
+  end
 
   def create_article
     @article = Article.new(article_params)
@@ -30,6 +41,28 @@ class Spree::Admin::PagesController < Spree::Admin::ResourceController
     respond_to do |format|
       if  @article.update(article_params)
         format.html { redirect_to '/admin/articles', notice: 'Статья отредактирована' }
+      else
+        format.html { redirect_to :back, notice: 'Ошибка!' }
+      end
+    end
+  end
+  def create_baloon
+    @article = Baloon.new(baloon_params)
+
+    respond_to do |format|
+      if @article.save
+        format.html { redirect_to '/admin/baloons', notice: 'Метка создана' }
+      else
+        format.html { redirect_to :back, notice: 'Ошибка!' }
+      end
+    end
+  end
+
+  def update_baloon
+    @article = Baloon.find(params[:baloon][:id])
+    respond_to do |format|
+      if  @article.update(baloon_params)
+        format.html { redirect_to '/admin/baloons', notice: 'Метка отредактирована' }
       else
         format.html { redirect_to :back, notice: 'Ошибка!' }
       end
@@ -100,6 +133,10 @@ class Spree::Admin::PagesController < Spree::Admin::ResourceController
     Material.find(params[:material_item_id]).destroy
     redirect_to :back
   end
+  def delete_baloon
+    Material.find(params[:baloon_item_id]).destroy
+    redirect_to :back
+  end
 
 
 
@@ -117,6 +154,9 @@ class Spree::Admin::PagesController < Spree::Admin::ResourceController
     params.require(:material).permit(:title, :text, spree_images_attributes: [:viewable_id, :attachment, :alt, :viewable_type, :id, :_destroy])
   end
 
+  def baloon_params
+    params.require(:baloon).permit(:coords, :caption, :header, :body, :footer)
+  end
 
 
 

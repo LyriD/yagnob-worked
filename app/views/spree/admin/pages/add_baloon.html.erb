@@ -1,0 +1,68 @@
+<!--<script>-->
+    <!--$(function(){-->
+        <!--ck_load();-->
+    <!--});-->
+<!--</script>-->
+
+<%= render 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+    Добавить метку на карту
+<% end %>
+
+<% content_for :page_actions do %>
+    <li><%= button_link_to 'Вернуться к списку', '/admin/baloons', :icon => 'icon-arrow-left' %></li>
+<% end %>
+
+<%= render "spree/shared/error_messages", :target => @baloon %>
+
+<%= form_for(@baloon, url: '/baloons') do |f| %>
+    <fieldset class="no-border-top">
+      <div data-hook="admin_page_form_fields">
+        <div class="left eight columns alpha" data-hook="admin_page_form_left">
+          <%= f.hidden_field :id, value: @baloon.id %>
+          <%= f.field_container :header do %>
+              <%= f.label :header %><br />
+              <%= f.text_field :header, :class => 'fullwidth title' %>
+              <%= f.error_message_on :header %>
+          <% end %>
+
+          <%= f.field_container :caption do %>
+              <%= f.label :caption %> <br />
+              <%= f.text_area :caption, {rows: 8, :class => 'fullwidth ckeditor'}  %>
+              <%= f.error_message_on :caption %>
+          <% end %>
+
+          <%= f.field_container :coords do %>
+              <%= f.label :coords %> <span class="required">*</span><br />
+              <%= f.text_field :coords, :class => 'fullwidth title'  %>
+              <%= f.error_message_on :coords %>
+          <% end %>
+
+
+          <%= f.field_container :body do %>
+              <%= f.label :body %> <br />
+              <%= f.text_area :body, {rows: 12, :class => 'fullwidth ckeditor'} %>
+              <%= f.error_message_on :body %>
+          <% end %>
+
+          <%= f.field_container :footer do %>
+              <%= f.label :footer %> <br />
+              <%= f.text_field :footer, :class => 'fullwidth title' %>
+              <%= f.error_message_on :footer %>
+          <% end %>
+
+
+
+        </div>
+
+        <div class="clear"></div>
+        <div data-hook="admin_page_form_additional_fields"></div>
+        <div class="clear"></div>
+      </div>
+      <%# render :partial => 'spree/admin/shared/new_resource_links' %>
+    </fieldset>
+    <div class="form-buttons filter-actions actions" data-hook="buttons">
+      <%= button Spree.t('baloons.create'), 'ok' %>
+    </div>
+<% end %>
