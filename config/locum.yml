@@ -1,0 +1,14 @@
+defaults: &defaults
+  LOCUM_SERVER:      sulfur.locum.ru
+  LOCUM_LOGIN:       astro
+  LOCUM_USER:        hosting_astro
+  LOCUM_PASSWORD:    QoB31hLiLUH
+development:
+  <<: *defaults
+  LOCUM_APPLICATION: 'yagnob'
+test:
+  <<: *defaults
+  LOCUM_APPLICATION: 'yagnob-test'
+production:
+  <<: *defaults
+  LOCUM_APPLICATION: 'yagnob-prod'

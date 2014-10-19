@@ -74,3 +74,20 @@ gem 'spree_contact_us', :git => 'https://github.com/jdutil/spree_contact_us'
 
 
 # gem 'spree_simple_dash', :git => 'git@github.com:spree/spree_simple_dash.git'
+
+
+
+
+group :development, :test do
+
+  gem 'capistrano', '3.1.0'
+  gem 'capistrano-bundler', '1.1.2'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+end
+
+group :production do
+  gem 'unicorn'
+  gem 'mysql2'
+  gem 'therubyracer'
+end
