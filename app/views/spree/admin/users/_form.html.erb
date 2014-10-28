@@ -20,7 +20,7 @@
 
           <%= f.select :price_kind,  options_for_select(Spree::OptionType.where(:name => 'Категория сбыта').first.option_values.map {|o| [o.presentation, o.name]}, :selected => f.object.price_kind), :include_blank => true%>
 
-          <%= label_tag 'оптовик' %>
+          <%= label_tag 'категория сбыта' %>
         </li>
       </ul>
       <%= hidden_field_tag 'user[spree_role_ids][]', '' %>
