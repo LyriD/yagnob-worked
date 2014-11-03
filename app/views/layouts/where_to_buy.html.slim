@@ -25,50 +25,11 @@ html
         #map style="width: 100%; height: 600px"
         - @baloons = Baloon.all
         javascript:
-          var points = [
-            {
-              coords: [55.831903, 37.411961],
-              caption: 'кэпшн балуна 1',
-              header: 'Заголовок балуна 1',
-              body: 'содержимое балуна 1',
-              footer: 'футер балуна 1'
-            },
-            {
-              coords: [55.763338, 37.565466],
-              caption: 'кэпшн балуна 2',
-              header: 'Заголовок балуна 2',
-              body: 'содержимое балуна 2',
-              footer: 'футер балуна 2'
-            },
-            {
-              coords: [55.763338, 37.565466],
-              caption: 'кэпшн балуна 3',
-              header: 'Заголовок балуна 3',
-              body: 'содержимое балуна 3',
-              footer: 'футер балуна 3'
-            },
-            {
-              coords: [55.744522, 37.616378],
-              caption: 'кэпшн балуна 4',
-              header: 'Заголовок балуна 4',
-              body: 'содержимое балуна 4',
-              footer: 'футер балуна 4'
-            },
-            {
-              coords: [55.780898, 37.642889],
-              caption: 'кэпшн балуна 5',
-              header: 'Заголовок балуна 5',
-              body: 'содержимое балуна 5',
-              footer: 'футер балуна 5'
-            },
-            {
-              coords: [55.831903, 37.411961],
-              caption: 'кэпшн балуна 6',
-              header: 'Заголовок балуна 6',
-              body: 'содержимое балуна 6',
-              footer: 'футер балуна 6'
-            }
-          ];
+          var points = #{raw @baloons.to_json }
+          $.map(points, function(v){
+            v.coords = $.parseJSON(v.coords);
+            return v;
+          });
           ymaps.ready(function () {
             var myMap = new ymaps.Map('map', {
                       center: [55.751574, 37.573856],
