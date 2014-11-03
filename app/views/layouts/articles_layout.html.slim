@@ -27,7 +27,7 @@ html
             .content
               h1
                 = link_to article.title, "/articles/#{article.slug}"
-              p = article.teaser
+              p = raw article.teaser
       #popularProducts
         = render 'spree/custom_shared/popular'
       footer

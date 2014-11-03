@@ -15,7 +15,7 @@ section.article
   .content
     h1
       = link_to next_article.title, "/articles/#{next_article.slug}"
-    p = next_article.teaser
+    p = raw next_article.teaser
 
 - content_for :popularProducts do
   = render 'spree/custom_shared/popular'
