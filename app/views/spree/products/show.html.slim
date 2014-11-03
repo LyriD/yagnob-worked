@@ -2,7 +2,7 @@
 .left
   .fotorama data-nav="thumbs" data-width="100%"
     - @product.images.each do |i|
-      = image_tag(i.attachment.url(:product))
+      = image_tag(i.attachment.url(:large))
   .similarProducts
     h2 Похожие товары
     .row
