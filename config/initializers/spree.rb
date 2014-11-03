@@ -13,4 +13,10 @@ Spree.config do |config|
 
 end
 
+Spree::Config.set(:allow_ssl_in_production => false)
+Spree::Auth::Config[:registration_step] = false
+Spree::Config[:address_requires_state] = false
+Spree::Config[:alternative_billing_phone] = false
+
+
 Spree.user_class = "Spree::User"
