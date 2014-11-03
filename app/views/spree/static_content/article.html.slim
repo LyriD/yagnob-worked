@@ -9,6 +9,7 @@ h1 =@article.title
 .author = @article.author
 / А это рендерится следующая по списку статья
 - next_article = Article.where("id > ?", @article).first
+- next_article ||= Article.where("id < ?", @article).first
 section.article
   = image_tag(next_article.spree_images.first.attachment.url(:article_index)) if next_article.spree_images.first
   .content
