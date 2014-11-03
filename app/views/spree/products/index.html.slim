@@ -1,0 +1,7 @@
+- content_for :bodyClass, 'products'
+- if params[:keywords]
+  h1 = params[:keywords]
+  .row
+    -@products.each do |product|
+      = render partial: 'spree/custom_shared/product', locals: {product: product}
+
