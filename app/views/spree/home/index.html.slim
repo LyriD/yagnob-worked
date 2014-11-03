@@ -16,7 +16,7 @@ h1
           = image_tag product.images.first.attachment.url(:product)
           h2
             = link_to product.name, product_url(product)
-          p = raw strip_tags product.description
+          p = raw strip_tags truncate_html(product.description, length: 200, omission: '...')
           .price = display_price(product)
 h1 Последние публикации
 .articles
