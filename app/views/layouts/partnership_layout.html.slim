@@ -25,13 +25,14 @@ html
         .left
           p = raw @page.body
           .row
-            - Material.all.each do |m|
-              section
-                = image_tag m.spree_images.attachment.url(:product)
-                .content
-                  h1 = m.title
-                  p = m.text
-                  = link_to 'скачать', m.file, target: '_blank', class: 'load'
+            - if Material.any?
+              - Material.all.each do |m|
+                section
+                  = image_tag m.spree_images.attachment.url(:product) if m.spree_images
+                  .content
+                    h1 = m.title
+                    p = m.text
+                    = link_to 'скачать', m.file, target: '_blank', class: 'load'
         .right
           h2 Станьте нашим дилером
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
@@ -39,13 +40,13 @@ html
           = form_for @contact, :url => contacts_path, :html => { :novalidate => '' } do |f|
             .row
               label наименование организации
-              = f.text_field :organisation
+              = f.text_field :organisation, class: 'req'
             .row
               label контактное лицо
-              = f.text_field :name
+              = f.text_field :name, class: 'req'
             .row
               label e-mail
-              = f.text_field :email
+              = f.text_field :email, class: 'req email'
             .row
               label телефон для связи
               = f.text_field :phone
@@ -63,3 +64,43 @@ html
         .phone +7 (495) 232-23-22
         menu
           = render :partial => "spree/static_content/static_content_list", :collection => Spree::Page.visible.footer_links, :as => :page
+
+
+javascript:
+  var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+
+  $(function () {
+
+    $("#new_contact_us_contact").submit(function () {
+
+      var isFormValid = true;
+      $("#new_contact_us_contact .req").each(function () { // Note the :text
+        //            alert(1);
+
+        if ($.trim($(this).val()).length == 0) {
+          $(this).addClass("error");
+          isFormValid = false;
+        } else {
+
+          if ($(this).hasClass('email')) {
+            if (!pattern.test($(this).val())) {
+              isFormValid = false;
+              alert("неверно введен email");
+            }
+          }
+
+          $(this).removeClass("error");
+        }
+      });
+
+      if (!isFormValid) alert("Пожалуйста заполните все обязательные поля");
+      if ($('#new_contact_us_contact .email').length) {
+        if (!pattern.test($('#new_contact_us_contact .email').val())) {
+          isFormValid = false;
+          alert("неверно введен email");
+        }
+      }
+
+      return isFormValid;
+    });
+  });
