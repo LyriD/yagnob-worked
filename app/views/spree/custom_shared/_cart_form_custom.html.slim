@@ -1,5 +1,5 @@
 - @product.variants.each do |variant|
-  - if variant.option_values.first.name.to_i == spree_current_user.price_kind.to_i
+  - if spree_current_user and variant.option_values.first.name.to_i == spree_current_user.price_kind.to_i
     - @true_var = variant
 
 - if @true_var

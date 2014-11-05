@@ -8,7 +8,7 @@
     .row
       - @product.taxons.first.products.limit(6).each do |p|
         - p.variants.each do |variant|
-          - if variant.option_values.first.name.to_i == spree_current_user.price_kind.to_i
+          - if spree_current_user and variant.option_values.first.name.to_i == spree_current_user.price_kind.to_i
             - @true_var = variant
         section class="product supershit new awesome cool"
           .imgWrap
@@ -33,7 +33,8 @@
   h1 = @product.name
   - brand = @product.taxons.where(parent_id: 12).first
   a.brand href="#"
-    = link_to(image_tag(brand.icon.url(:normal)), seo_url(brand)) unless @product.taxons.where(parent_id: 12).empty?
+    - if !@product.taxons.where(parent_id: 12).empty? and brand.icon.url(:normal) != '/assets/default_taxon.png'
+      = link_to(image_tag(brand.icon.url(:normal)), seo_url(brand))
     |
     = link_to brand.name, seo_url(brand)
   p = raw strip_tags @product.description
