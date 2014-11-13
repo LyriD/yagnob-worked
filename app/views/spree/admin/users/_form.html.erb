@@ -16,9 +16,9 @@
           </li>
         <% end %>
         <li>
-          <%# Spree::OptionType.where(:name => 'Категория сбыта').first.option_values.map {|o| [o.name, o.presentation]} %>
+          <%# Spree::OptionType.where(:name => 'Категория сбыта').first.option_values.map {|o| [o.presentation, o.name]} %>
 
-          <%= f.select :price_kind,  options_for_select(Spree::OptionType.where(:name => 'Категория сбыта').first.option_values.map {|o| [o.presentation, o.name]}, :selected => f.object.price_kind), :include_blank => true%>
+          <%= f.select :price_kind,  options_for_select(Spree::OptionType.where(:name => 'Категория сбыта').first.option_values.map {|o| [o.presentation, o.name]} + [['видно все варианты', '-1']], :selected => f.object.price_kind), :include_blank => true%>
 
           <%= label_tag 'категория сбыта' %>
         </li>

@@ -1,22 +1,20 @@
-- product.variants.each do |variant|
-  - if spree_current_user and variant.option_values.first.name.to_i == spree_current_user.price_kind.to_i
-    - @true_var = variant
 / здесь указываешь класс или классы типа новинка, супертовар итд
 section class="product supershit new awesome cool"
   .imgWrap
     = link_to product_image(product, :itemprop => "image"), product_url(product, :taxon_id => @taxon.try(:id))
   h2
     = link_to product.name, product_url(product, :taxon_id => @taxon.try(:id))
-  - if @true_var
-    = form_for :order, :url => populate_orders_path, html: {class: 'price'} do |f|
-      = hidden_field_tag "variant_id", @true_var.id
-      .price = display_price(@true_var)
-      - @true_var = nil
+  - if true_var(product)
+    - true_var(product).each do |t_v|
+      = form_for :order, :url => populate_orders_path, html: {class: 'price'} do |f|
+        = hidden_field_tag "variant_id", t_v.id
+        .price = display_price(t_v)
+        - t_v = nil
 
-      = hidden_field_tag :quantity, 1
-      button.toCart type="submit"
-        = icon 'shopping-cart'
-        | в корзину
+        = hidden_field_tag :quantity, 1
+        button.toCart type="submit"
+          = icon 'shopping-cart'
+          | в корзину
 
 
 

@@ -1,13 +1,10 @@
-- @product.variants.each do |variant|
-  - if spree_current_user and variant.option_values.first.name.to_i == spree_current_user.price_kind.to_i
-    - @true_var = variant
-
-- if @true_var
-  = form_for :order, :url => populate_orders_path, html: {class: 'price'} do |f|
-    = hidden_field_tag "variant_id", @true_var.id
-    .amount = display_price(@true_var)
-    = number_field_tag :quantity, 1, :class => 'title', :min => 1
-    button type="submit"
-      = icon 'shopping-cart'
-      | в корзину
+- if true_var(@product)
+  - true_var(@product).each do |t_v|
+    = form_for :order, :url => populate_orders_path, html: {class: 'price'} do |f|
+      = hidden_field_tag "variant_id", t_v.id
+      .amount = display_price(t_v)
+      = number_field_tag :quantity, 1, :class => 'title', :min => 1
+      button type="submit"
+        = icon 'shopping-cart'
+        | в корзину
 

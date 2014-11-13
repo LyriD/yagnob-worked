@@ -16,6 +16,9 @@ html
         menu#mainMenu
           li: a href="/" Главная
           = render :partial => "spree/static_content/static_content_list", :collection => Spree::Page.visible.header_links, :as => :page
+          li
+            - if current_spree_user
+              a href="/logout" Выход
           = render 'spree/shared/search'
 
 
