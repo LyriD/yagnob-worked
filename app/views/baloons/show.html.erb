@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Coords:</strong>
+  <%= @baloon.coords %>
+</p>
+
+<p>
+  <strong>Caption:</strong>
+  <%= @baloon.caption %>
+</p>
+
+<p>
+  <strong>Header:</strong>
+  <%= @baloon.header %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @baloon.body %>
+</p>
+
+<p>
+  <strong>Footer:</strong>
+  <%= @baloon.footer %>
+</p>
+
+<%= link_to 'Edit', edit_baloon_path(@baloon) %> |
+<%= link_to 'Back', baloons_path %>
