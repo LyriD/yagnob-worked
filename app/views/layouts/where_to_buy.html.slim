@@ -27,7 +27,15 @@ html
         - @page = Spree::Page.visible.find_by_slug!(request.path)
         h1 = @page.title
         #map style="width: 100%; height: 600px"
-        - @baloons = Baloon.all
+        ul#partners
+          - @baloons = Baloon.all
+          - @baloons.each do |b|
+            li
+              h2 = b.header
+              a.logo href="#": img src="http://lorempixel.com/200/50"
+              p.address=b.caption
+              p.url: a href="#{b.footer}" =b.footer
+              p.phones =b.body
         javascript:
           var points = #{raw @baloons.to_json }
           $.map(points, function(v){

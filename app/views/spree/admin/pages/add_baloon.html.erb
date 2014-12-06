@@ -22,32 +22,32 @@
         <div class="left eight columns alpha" data-hook="admin_page_form_left">
           <%= f.hidden_field :id, value: @baloon.id %>
           <%= f.field_container :header do %>
-              <%= f.label :header %><br />
+              <%= f.label 'Название' %><br />
               <%= f.text_field :header, :class => 'fullwidth title' %>
               <%= f.error_message_on :header %>
           <% end %>
 
           <%= f.field_container :caption do %>
-              <%= f.label :caption %> <br />
-              <%= f.text_area :caption, {rows: 8, :class => 'fullwidth ckeditor'}  %>
+              <%= f.label 'Адрес' %> <br />
+              <%= f.text_area :caption, {rows: 8, :class => 'fullwidth'}  %>
               <%= f.error_message_on :caption %>
           <% end %>
 
           <%= f.field_container :coords do %>
-              <%= f.label :coords %> <span class="required">*</span><br />
-              <%= f.text_field :coords, :class => 'fullwidth title'  %>
+              'GPS-Координаты для карты, формат: [xx.xxxxxx, xx.xxxxxx]'  <span class="required">*</span><br />
+              <%= f.text_field :coords, :class => 'fullwidth'  %>
               <%= f.error_message_on :coords %>
           <% end %>
 
 
           <%= f.field_container :body do %>
-              <%= f.label :body %> <br />
-              <%= f.text_area :body, {rows: 12, :class => 'fullwidth ckeditor'} %>
+              <%= f.label 'Телефон' %> <br />
+              <%= f.text_area :body, {rows: 12, :class => 'fullwidth '} %>
               <%= f.error_message_on :body %>
           <% end %>
 
           <%= f.field_container :footer do %>
-              <%= f.label :footer %> <br />
+              <%= f.label 'Адрес сайта' %> <br />
               <%= f.text_field :footer, :class => 'fullwidth title' %>
               <%= f.error_message_on :footer %>
           <% end %>
