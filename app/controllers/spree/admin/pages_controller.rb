@@ -155,7 +155,7 @@ class Spree::Admin::PagesController < Spree::Admin::ResourceController
   end
 
   def baloon_params
-    params.require(:baloon).permit(:coords, :caption, :header, :body, :footer)
+    params.require(:baloon).permit(:coords, :caption, :header, :body, :footer, :logo)
   end
 
 

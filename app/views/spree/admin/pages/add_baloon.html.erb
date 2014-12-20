@@ -16,7 +16,7 @@
 
 <%= render "spree/shared/error_messages", :target => @baloon %>
 
-<%= form_for(@baloon, url: '/baloons') do |f| %>
+<%= form_for(@baloon, url: '/baloons', mulripart: true) do |f| %>
     <fieldset class="no-border-top">
       <div data-hook="admin_page_form_fields">
         <div class="left eight columns alpha" data-hook="admin_page_form_left">
@@ -25,6 +25,12 @@
               <%= f.label 'Название' %><br />
               <%= f.text_field :header, :class => 'fullwidth title' %>
               <%= f.error_message_on :header %>
+          <% end %>
+
+          <%= f.field_container :logo do %>
+              <%= f.label 'Лого' %><br />
+              <%= f.file_field :logo, :class => 'fullwidth title' %>
+              <%= f.error_message_on :logo %>
           <% end %>
 
           <%= f.field_container :caption do %>

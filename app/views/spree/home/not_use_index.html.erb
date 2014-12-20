@@ -1,0 +1,212 @@
+<% content_for :sidebar do %>
+  <div data-hook="homepage_sidebar_navigation">
+    <%= render :partial => 'spree/shared/taxonomies' %>
+  </div>
+<% end %>
+
+<div data-hook="homepage_products">
+  <% cache(cache_key_for_products) do %>
+    <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+  <% end %>
+</div>
+
+
+
+
+
+
+<%
+
+
+
+   # prices = JSON.parse(File.read("#{Rails.root.to_s}/db/json_data/convertcsv.json"))
+   # category_file = JSON.parse(File.read("#{Rails.root.to_s}/db/json_data/tbl_category.json"))
+   # tbl_product_spec = JSON.parse(File.read("#{Rails.root.to_s}/db/json_data/tbl_product_spec.json"))
+   # products = JSON.parse(File.read("#{Rails.root.to_s}/db/json_data/tbl_product.json"))
+   # specs = JSON.parse(File.read("#{Rails.root.to_s}/db/json_data/tbl_spec.json"))
+   #
+   # tbl_subcat = JSON.parse(File.read("#{Rails.root.to_s}/db/json_data/tbl_subcat.json"))
+   # tbl_brand = JSON.parse(File.read("#{Rails.root.to_s}/db/json_data/tbl_brand.json"))
+   #
+   #
+   #  # метод для подкатегорий
+   #
+   # tbl_subcat.each { |record| taxon = Spree::Taxon.create(name: record['HEADER'], parent_id: record['CATEGORY'].to_i+73, child_index: record['ID'], taxonomy_id: 4) }
+   #
+   #
+   #
+
+
+   # prices.each do |p|
+   #   unless p['Цена1'].blank?
+   #     product = Spree::Product.find(p['id'])
+   #     p1 = product.variants.build(:option_value_ids => [11])
+   #     p1.default_price = p['Цена1'].to_i
+   #     p1.save!
+   #     p2 = product.variants.build(:option_value_ids => [10])
+   #     p2.default_price = p['Цена2'].to_i
+   #     p2.save!
+   #     p3 = product.variants.build(:option_value_ids => [9])
+   #     p3.default_price = p['Цена3'].to_i
+   #     p3.save!
+   #     p4 = product.variants.build(:option_value_ids => [8])
+   #     p4.default_price = p['Цена4'].to_i
+   #     p4.save!
+   #     p5 = product.variants.build(:option_value_ids => [12])
+   #     p5.default_price = p['Цена5'].to_i
+   #     p5.save!
+   #   end
+   # end
+
+
+   # prices.each do |p|
+   #   # puts 1
+   #   next if p['Цена1'].blank?
+   #   product = Spree::Product.find(p['id'])
+   #   product.sku = p['Артикул']
+   #   product.save!
+   #   p1 = product.variants.build(:option_value_ids => [11])
+   #   p1.price = p['Цена1']
+   #   p1.save!
+   #   p2 = product.variants.build(:option_value_ids => [10])
+   #   p2.price = p['Цена2']
+   #   p2.save!
+   #   p3 = product.variants.build(:option_value_ids => [9])
+   #   p3.price = p['Цена3']
+   #   p3.save!
+   #   p4 = product.variants.build(:option_value_ids => [8])
+   #   p4.price = p['Цена4']
+   #   p4.save!
+   #   p5 = product.variants.build(:option_value_ids => [12])
+   #   p5.price = p['Цена5']
+   #   p5.save!
+   #
+   # end
+   #
+   # # Spree::Product.all.each do |pr|
+   #   pr.master.sku = nil
+   #   pr.master.save!
+   # end
+
+   %>
+
+<%
+
+   # tbl_img = JSON.parse(File.read("#{Rails.root.to_s}/db/json_data/tbl_img.json"))
+   #
+   # podkluchit_img = Spree::Product.all
+   #
+   # podkluchit_img.each do |prod|
+   #
+   #   image = tbl_img.detect { |img| img["ID"] == prod.meta_description.to_i }
+   #
+   #   if image
+   #
+   #   images_path = Pathname.new(Rails.root.to_s) + "app/assets/images/products"
+   #   path = images_path + "#{image["URL"]}"
+   #   # return false if !File.exist?(path)
+   #
+   #
+   #   prod.master.images.create!(attachment: File.open(path))
+   #
+   # end
+   # end
+   #
+   #
+
+
+   #
+
+
+
+
+
+
+
+
+
+   # # метод для товаров
+   #
+   # products.each do |product|
+   #
+   #   p_specs = tbl_product_spec.select {|p_s| p_s["PRODUCT"] == product["ID"] }
+   #
+   #   product_properties_attributes = {}
+   #   p_specs.each_with_index do |p_spec, i|
+   #     product_properties_attributes[i] = {}
+   #     product_properties_attributes[i][:id] = ''
+   #     product_properties_attributes[i][:property_name] = specs.detect { |spec| (spec["ID"] == p_spec["SPEC"])}["HEADER"]
+   #     product_properties_attributes[i][:value] = p_spec["VAL"]
+   #   end
+   #
+   #
+   #
+   #   taxons = []
+   #
+   #   if !product["CATEGORY"].blank? and category_file.detect { |category| (category["ID"].to_i == product["CATEGORY"].to_i)} and Spree::Taxon.where(name: category_file.detect { |category| (category["ID"].to_i == product["CATEGORY"].to_i)}["HEADER"]).first
+   #
+   #   taxons << Spree::Taxon.where(name: category_file.detect { |category| (category["ID"].to_i == product["CATEGORY"].to_i)}["HEADER"]).first.id
+   #
+   #   end
+   #   if !product["SUBCAT"].blank? and tbl_subcat.detect { |category| (category["ID"].to_i == product["SUBCAT"].to_i)} and Spree::Taxon.where(name: tbl_subcat.detect { |category| (category["ID"].to_i == product["SUBCAT"].to_i)}["HEADER"]).first
+   #
+   #   taxons << Spree::Taxon.where(name: tbl_subcat.detect { |category| (category["ID"].to_i == product["SUBCAT"].to_i)}["HEADER"]).first.id
+   #
+   #   end
+   #   if !product["BRAND"].blank? and tbl_brand.detect { |category| (category["ID"].to_i == product["BRAND"].to_i)} and Spree::Taxon.where(name: tbl_brand.detect { |category| (category["ID"].to_i == product["BRAND"].to_i)}["HEADER"]).first
+   #
+   #   taxons << Spree::Taxon.where(name: tbl_brand.detect { |category| (category["ID"].to_i == product["BRAND"].to_i)}["HEADER"]).first.id
+   #
+   #   end
+   #
+   #   Spree::Product.create(
+   #           name: product["HEADER"],
+   #           description: product["BODY"],
+   #           available_on: '04.09.2014',
+   #           price: 1,
+   #           shipping_category_id: 3,
+   #           taxon_ids: taxons,
+   #           product_properties_attributes: product_properties_attributes,
+   #           meta_description: product["IMG"]
+   #   )
+   #
+   # end
+   #
+   #
+
+
+
+   #
+   # ## метод для свойств
+   #
+   # specs.each { |record| Spree::Property.create!(name: record['HEADER'], presentation: ((record['UNIT'].blank?)? '.' : record['UNIT'])) }
+   #
+   #
+   # # метод для прототипов со свойствами
+   #
+   # category_file.each do |record|
+   #   arr = []
+   #   speki = specs.select { |sa| (sa["CATEGORY"] == record["ID"])}
+   #   speki.each do |m|
+   #     arr << (Spree::Property.where(name: m["HEADER"]).first.id)
+   #   end
+   #   puts arr.to_s
+   #   Spree::Prototype.create!(name: record["HEADER"], property_ids: arr)
+   # end
+   #
+
+
+
+%>
+
+<%# products.count %>
+
+    <!--"image"=>{-->
+    <!--"attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f8e1618a4d8 @tempfile=#<Tempfile:/var/folders/2w/wq73xm3110s6nfwnnb2lddjc0000gn/T/RackMultipart20140904-955-ybapnv>,-->
+    <!--@original_filename="-310.jpg",-->
+    <!--@content_type="image/jpeg",-->
+    <!--@headers="Content-Disposition: form-data; name=\"image[attachment]\"; filename=\"-310.jpg\"\r\nContent-Type: image/jpeg\r\n">, "viewable_id"=>"29", "alt"=>""-->
+
+
+
+

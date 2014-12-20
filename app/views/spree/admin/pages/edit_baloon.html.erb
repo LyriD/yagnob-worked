@@ -25,6 +25,12 @@
               <%= f.error_message_on :header %>
           <% end %>
 
+          <%= f.field_container :logo do %>
+              <%= f.label 'Лого' %><br />
+              <%= f.file_field :logo, :class => 'fullwidth title' %>
+              <%= f.error_message_on :logo %>
+          <% end %>
+
           <%= f.field_container :caption do %>
               <%= f.label 'Адрес' %> <br />
               <%= f.text_area :caption, {rows: 8, :class => 'fullwidth'}  %>
@@ -50,7 +56,8 @@
               <%= f.error_message_on :footer %>
           <% end %>
 
-<!--<регион адрес url телефон(несколько) лого имейл >-->
+
+          <!--<регион адрес url телефон(несколько) лого имейл >-->
         </div>
 
         <div class="clear"></div>

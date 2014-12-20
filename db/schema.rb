@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141012155901) do
+ActiveRecord::Schema.define(version: 20141207200752) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20141012155901) do
     t.string   "footer"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "logo"
   end
 
   create_table "materials", force: true do |t|
@@ -476,6 +477,7 @@ ActiveRecord::Schema.define(version: 20141012155901) do
     t.datetime "updated_at"
     t.string   "instruction"
     t.string   "certificate"
+    t.string   "artikul"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"

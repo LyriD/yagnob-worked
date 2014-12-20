@@ -38,6 +38,7 @@ module Spree
         #
         instruction = params[:product][:instruction]
         cert = params[:product][:certificate]
+        artikul = params[:product][:artikul]
         params[:product][:certificate] = nil
         params[:product][:instruction] = nil
 
@@ -58,6 +59,7 @@ module Spree
             @object.instruction = '/instructions/'+path.split('/').last
             @object.save!
           end
+          @object.artikul = artikul
           invoke_callbacks(:update, :after)
           flash[:success] = flash_message_for(@object, :successfully_updated)
           respond_with(@object) do |format|

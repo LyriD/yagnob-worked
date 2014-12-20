@@ -32,7 +32,7 @@ html
           - @baloons.each do |b|
             li
               h2 = b.header
-              a.logo href="#": img src="http://lorempixel.com/200/50"
+              /a.logo href="#": img src="http://lorempixel.com/200/50"
               p.address=b.caption
               p.url: a href="#{b.footer}" =b.footer
               p.phones =b.body
