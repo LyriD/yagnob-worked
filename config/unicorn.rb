@@ -9,7 +9,7 @@ ConfigsLoader.load_configs ENV['RAILS_ENV'], :locum
 @dir     = "/home/#{@user}/projects/#{@project}/current"
 @workers = 1
 
-user("#{@user}",'plex_users')
+user("#{@user}",'prime_users')
 worker_processes   @workers
 preload_app        true
 timeout            30
