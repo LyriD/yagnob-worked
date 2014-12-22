@@ -25,16 +25,13 @@ role :app,                  ENV['LOCUM_SERVER'], primary: true
 role :web,                  ENV['LOCUM_SERVER']
 role :db,                   ENV['LOCUM_SERVER']
 
-server ENV['LOCUM_SERVER'], user:                ENV['LOCUM_USER'],
-       login:               ENV['LOCUM_LOGIN'],
-       roles:               %w{app web},
-       ssh_options: {
-           user:              ENV['LOCUM_USER'],
-           forward_agent:     true,
-           auth_methods:      %w{password},
-           password:          ENV['LOCUM_PASSWORD']
-       },
-       default_run_options: {pty: true}
+server ENV['LOCUM_SERVER'], roles:           %w{app web},
+                            ssh_options: {
+                              user:          ENV['LOCUM_USER'],
+                              forward_agent: true,
+                              auth_methods:  %w{password},
+                              password:      ENV['LOCUM_PASSWORD']
+                            }
 
 namespace :deploy do
   after  :finishing,        :update_current_symlink
