@@ -8,8 +8,9 @@
     .row
       - @product.taxons.first.products.limit(6).each do |p|
         - p.variants.each do |variant|
-          - if spree_current_user and variant.option_values.first.name.to_i == spree_current_user.price_kind.to_i or spree_current_user.price_kind.to_i == -1
-            - @true_var = variant
+          - if spree_current_user
+            - if variant.option_values.first.name.to_i == spree_current_user.price_kind.to_i or spree_current_user.price_kind.to_i == -1
+              - @true_var = variant
         section class="product supershit new awesome cool"
           .imgWrap
             = link_to product_image(p, :itemprop => "image"), product_url(p, :taxon_id => @taxon.try(:id))
