@@ -50,6 +50,8 @@ Rails.application.routes.draw do
   post '/materials' => 'spree/admin/pages#create_material'
   patch '/materials' => 'spree/admin/pages#update_material'
 
+
+  get 'export_xml' => 'spree/products#xml_export', :defaults => { :format => 'xml' }
   # Example resource route with options:
   #   resources :products do
   #     member do
