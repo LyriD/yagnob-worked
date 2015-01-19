@@ -4,6 +4,8 @@ module ApplicationHelper
   def true_var(product)
     out = []
     if spree_current_user
+
+
     if spree_current_user.price_kind == -1
           out << product.variants
           out << product.master if out.blank?
@@ -14,6 +16,8 @@ module ApplicationHelper
             end
           end
     end
+
+
     else
       product.variants.each do |variant|
         if variant.option_values.first.name.to_i == 1
@@ -21,8 +25,8 @@ module ApplicationHelper
         end
       end
     end
-
-    return out
+    o = (out.first.class == Spree::Variant)? out : out.first
+    return o
   end
 
 end
