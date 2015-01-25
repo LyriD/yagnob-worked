@@ -20,6 +20,8 @@ html
           li
             - if current_spree_user
               a href="/logout" Выход
+            - else
+              a href="/login" Вход
           = render 'spree/shared/search'
 
 
