@@ -1,4 +1,4 @@
-- content_for :bodyClass, 'product'
+- content_for :bodyClass, "product #{(params[:taxon_id].present?)? ((@taxon.depth < 2)? "category_#{@taxon.id}" : "category_#{@taxon.parent.id}" ) : ((@product.taxons.first.depth < 2)? "category_#{@product.taxons.first.id}" : "category_#{@product.taxons.first.parent.id}" )}"
 .left
   .fotorama data-nav="thumbs" data-width="100%"
     - @product.images.each do |i|

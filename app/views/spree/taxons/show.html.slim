@@ -1,4 +1,4 @@
-- content_for :bodyClass, 'products'
+- content_for :bodyClass, "products #{(@taxon.depth < 2)? "category_#{@taxon.id}" : "category_#{@taxon.parent.id}" }"
 - unless params[:keywords].present?
 
   - unless @taxon.children.empty?
