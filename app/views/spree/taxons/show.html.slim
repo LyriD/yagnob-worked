@@ -4,12 +4,10 @@
   - unless @taxon.children.empty?
     h1 = @taxon.name
     - unless params[:keywords].present?
-      - cache [I18n.locale, @taxon] do
-        = render partial: 'taxon_slim', collection: @taxon.children, as: :taxon, locals: { sm: false}
+      = render partial: 'taxon_slim', collection: @taxon.children, as: :taxon, locals: { sm: false}
 
   - if @taxon.children.empty?
     h1 = @taxon.name
     - unless params[:keywords].present?
-      - cache [I18n.locale, @taxon] do
-        = render partial: 'taxon_slim', locals: {taxon: @taxon, sm: true}
+      = render partial: 'taxon_slim', locals: {taxon: @taxon, sm: true}
 
