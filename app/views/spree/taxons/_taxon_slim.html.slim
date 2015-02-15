@@ -1,6 +1,7 @@
 - unless taxon_preview(taxon).empty?
   h2 = link_to(taxon.name, seo_url(taxon)) unless sm
+  - count = (sm)? 1000 : 8
   .row
-    - taxon_preview(taxon, 100000).each do |product|
+    - taxon_preview(taxon, count).each do |product|
       /= product.name
       = render partial: 'spree/custom_shared/product', locals: {product: product}
