@@ -33,11 +33,12 @@
 .right
   h1 = @product.name
   - brand = @product.taxons.where(parent_id: 12).first
-  a.brand href="#"
-    - if !@product.taxons.where(parent_id: 12).empty? and brand.icon.url(:normal) != '/assets/default_taxon.png'
-      = link_to(image_tag(brand.icon.url(:normal)), seo_url(brand))
-    |
-    = link_to brand.name, seo_url(brand)
+  - if brand
+    a.brand href="#"
+      - if !@product.taxons.where(parent_id: 12).empty? and brand.icon.url(:normal) != '/assets/default_taxon.png'
+        = link_to(image_tag(brand.icon.url(:normal)), seo_url(brand))
+      |
+      = link_to brand.name, seo_url(brand)
   p = raw strip_tags @product.description
   / В этом блоке тоже можешь вставить как там по дефолту, я скорее всего поправлю
   /form.price
