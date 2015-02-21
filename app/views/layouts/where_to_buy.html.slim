@@ -34,11 +34,14 @@ html
           - @baloons = Baloon.all
           - @baloons.each do |b|
             li
+              - b.coords = get_coords(b.coords) unless b.coords.first == '['
+              - b.save! unless b.coords.first == '['
               h2 = raw b.header
               /a.logo href="#": img src="http://lorempixel.com/200/50"
               p.address=raw b.caption
               p.url: a href="#{b.footer}" =raw b.footer
               p.phones =raw b.body
+              p.phones =b.coords
         javascript:
           var points = #{raw @baloons.to_json }
           $.map(points, function(v){
