@@ -77,7 +77,7 @@ $(function(){
 
     $scrollToTop = $('#scrollToTop');
     $(window).scroll(function(){
-        if ($(this).scrollTop() > 100) {
+        if ($(this).scrollTop() > 500) {
             $scrollToTop.fadeIn();
         } else {
             $scrollToTop.fadeOut();
