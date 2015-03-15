@@ -36,7 +36,8 @@ html
           .row
             - Spree::Taxonomy.find_by_name('Категории').root.children.each do |category|
               section
-                = image_tag(category.icon.url(:preview)) unless category.icon.blank?
+                .imgcontainer
+                  = image_tag(category.icon.url(:preview)) unless category.icon.blank?
                 h2
                   = link_to category.name, seo_url(category)
                 ul

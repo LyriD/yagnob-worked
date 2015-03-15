@@ -517,7 +517,7 @@ body.catalog
     +breakpoint($large)
       +span(last 14)
     section
-      +trailer(4)
+      +trailer(2)
       width: 140px
       position: relative
       //+gallery(2 of 8)
@@ -525,23 +525,39 @@ body.catalog
       //  +gallery(2 of 12)
       //+breakpoint($large)
       //  +gallery(2 of 16)
+      .imgcontainer
+        font-size: 0px
+        line-height: 0px
+        text-align: center
+        height: 100px
+        vertical-align: bottom
+        &:before
+          content: ''
+          vertical-align: bottom
+          display: inline-block
+          height: 100%
       img
-        width: 100%
+        max-width: 100%
+        max-height: 100%
+        display: inline-block
+        vertical-align: bottom
+
       h2
         position: relative
         z-index: 1
         +adjust-font-size-to(20px)
         background: rgba(255,255,255,.9)
         margin: 0
-        margin-top: -40px
         line-height: 30px
         padding: 5px 10px
       ul
         padding: 0 10px
         margin: 0
-        list-style: none
+        list-style: circle
         li
-          line-height: 1.8em
+          font-size: .9em
+          line-height: 1.2em
+          margin-bottom: .8em
 
 
 
