@@ -19,54 +19,60 @@
 //= require jstree/dist/jstree.min
 //= require spree/frontend/spree_contact_us
 //= require sly/dist/sly.min
+//= require masonry.pkgd.min
 
 $(function(){
     $frame = $('.frame');
     $wrap = $('.products');
-    $frame.sly({
-        horizontal: 1,
-        itemNav: 'basic',
-        smart: 1,
-        activateOn: 'click',
-        mouseDragging: 1,
-        touchDragging: 1,
-        releaseSwing: 1,
-        startAt: 0,
-        scrollBar: $wrap.find('.scrollbar'),
-        scrollBy: 0,
+    if ($frame.length > 0) {
+        $frame.sly({
+            horizontal: 1,
+            itemNav: 'basic',
+            smart: 1,
+            activateOn: 'click',
+            mouseDragging: 1,
+            touchDragging: 1,
+            releaseSwing: 1,
+            startAt: 0,
+            scrollBar: $wrap.find('.scrollbar'),
+            scrollBy: 0,
 //        pagesBar: $wrap.find('.pages'),
-        activatePageOn: 'click',
-        speed: 300,
-        elasticBounds: 1,
-        easing: 'easeOutExpo',
-        dragHandle: 1,
-        dynamicHandle: 1,
-        clickBar: 1,
+            activatePageOn: 'click',
+            speed: 300,
+            elasticBounds: 1,
+            easing: 'easeOutExpo',
+            dragHandle: 1,
+            dynamicHandle: 1,
+            clickBar: 1,
 
-        // Cycling
-        cycleBy: 'pages',
-        cycleInterval: 1000,
-        pauseOnHover: 1,
-        startPaused: 1,
+            // Cycling
+            cycleBy: 'pages',
+            cycleInterval: 1000,
+            pauseOnHover: 1,
+            startPaused: 1,
 
-        // Buttons
-        prevPage: $('i.prevPage'),
-        nextPage: $('i.nextPage')
-    });
+            // Buttons
+            prevPage: $('i.prevPage'),
+            nextPage: $('i.nextPage')
+        });
+    }
 
-
-    $('#leftMenu > .categories, #leftMenu > .brands').jstree({
-        core : {
-            themes : {
-                variant: "small",
-                dots : false,
-                icons : false,
-                responsive: false
+    var $jstree = $('#leftMenu > .categories, #leftMenu > .brands');
+    if($jstree.length > 0){
+        $('#leftMenu > .categories, #leftMenu > .brands').jstree({
+            core : {
+                themes : {
+                    variant: "small",
+                    dots : false,
+                    icons : false,
+                    responsive: false
+                }
             }
-        }
-    }).on("activate_node.jstree", function(e,data){
-        window.location.href = data.node.a_attr.href;
-    });
+        }).on("activate_node.jstree", function(e,data){
+            window.location.href = data.node.a_attr.href;
+        });
+
+    }
 
 
     $scrollToTop = $('#scrollToTop');
@@ -81,6 +87,13 @@ $(function(){
     $scrollToTop.click(function(){
         $('html, body').animate({scrollTop : 0},800);
         return false;
+    });
+
+
+    var container = document.querySelector('.categories > .row');
+    var msnry = new Masonry( container, {
+        gutter: 20,
+        itemSelector: 'section'
     });
 
 

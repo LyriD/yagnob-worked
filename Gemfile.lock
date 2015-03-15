@@ -415,6 +415,7 @@ DEPENDENCIES
   compass-normalize
   compass-rails
   font-awesome-sass
+  httparty
   jbuilder (~> 2.0)
   jquery-rails (= 3.1.0)
   jquery-turbolinks
