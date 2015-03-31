@@ -11,8 +11,8 @@
 $base-font-size: 14px
 $base-line-height: 21px
 +establish-baseline
-$medium: 1320px
-$large: 1640px
+$medium: 1340px
+$large: 1660px
 
 $pt: 'PT Sans', sans-serif
 $roboto: 'Roboto', sans-serif
@@ -40,7 +40,7 @@ a
 
 body
   padding-top: 20px
-  background-image: url("patterns/0.png")
+  //background-image: url("patterns/0.png")
   background-size: 50px
   margin-bottom: 50px
   $cats: 74 75 76 77 78 79 80 81 82 342 343
@@ -178,11 +178,25 @@ footer
   +span(2)
   .jstree-default-small .jstree-anchor
     height: auto
-    line-height: 16px
     margin-bottom: 4px
     white-space: normal
+    text-transform: uppercase
+    font-size: 12px
   .jstree-default-small .jstree-node
     margin-left: 0px
+    overflow: hidden
+    position: relative
+    line-height: 30px
+    padding: 6px 0
+    &:before
+      content: ''
+      position: absolute
+      height: 100%
+      width: 20px
+      top: 0
+      right: 0
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%)
+
   & > ul
     +trailer(2)
   a
@@ -681,20 +695,14 @@ ul#partners
 #scrollToTop
   font-size: 0
   position: fixed
-  top: 50px
+  bottom: 50px
   left: 5px
-  background: url("scrollToTop.png") no-repeat
-  background-size: 20px
-  width: 20px
-  padding-top: 50px
-  padding-bottom: 10px
-  text-align: center
+  background: url("up.svg") no-repeat center
+  background-size: contain
+  width: 50px
+  height: 50px
   cursor: pointer
   display: none
-  &:before
-    content: 'наверх'
-    font-size: 12px
-    font-weight: bold
 
 
 
