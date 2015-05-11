@@ -36,14 +36,15 @@ html
           .row
             - Spree::Taxonomy.find_by_name('Категории').root.children.each do |category|
               section
-                .imgcontainer
-                  = image_tag(category.icon.url(:preview)) unless category.icon.blank?
-                h2
-                  = link_to category.name, seo_url(category)
-                ul
-                  - category.children.each do |c_t|
-                    li
-                      =link_to c_t.name, seo_url(c_t)
+                h2 = link_to category.name, seo_url(category)
+                .col
+                  .imgcontainer
+                    = image_tag(category.icon.url(:preview)) unless category.icon.blank?
+                .col
+                  ul
+                    - category.children.each do |c_t|
+                      li
+                        =link_to c_t.name, seo_url(c_t)
       #popularProducts
         = render 'spree/custom_shared/popular'
 

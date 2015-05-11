@@ -15,3 +15,6 @@
 
 # Ignore sensitive configurations
 /config/locum.yml
+
+
+/db

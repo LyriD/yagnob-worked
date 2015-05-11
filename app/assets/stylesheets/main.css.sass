@@ -62,7 +62,6 @@ header
   #mainMenu
     padding: 0
     +push(2)
-    +rhythm
     list-style: none
     margin-top: 1em
     +clearfix
@@ -73,16 +72,20 @@ header
           border-bottom: 1px solid #000
       display: block
       float: left
-      margin-left: 10px
+      margin-left: 30px
       &:first-child
         margin-left: 0
 
       a
-        padding: 4px 8px
+        padding: 4px 0
+        font: 16px $pt
         font-family: $pt
         color: inherit
         text-decoration: none
         display: inline-block
+        text-transform: uppercase
+        &:hover
+          text-shadow: 1px 1px 2px rgba(0,0,0,0.3)
 
 #container
   border-radius: 20px
@@ -554,14 +557,16 @@ body.catalog
     +breakpoint($large)
       +span(last 14)
     section
+      +clearfix
+    section .col
       +trailer(2)
       width: 140px
       position: relative
-      //+gallery(2 of 8)
-      //+breakpoint($medium)
-      //  +gallery(2 of 12)
-      //+breakpoint($large)
-      //  +gallery(2 of 16)
+      +gallery(2 of 8)
+      +breakpoint($medium)
+        +gallery(2 of 12)
+      +breakpoint($large)
+        +gallery(2 of 16)
       .imgcontainer
         font-size: 0px
         line-height: 0px
@@ -706,6 +711,27 @@ ul#partners
 
 
 
+select#taxon
+  display: none
 
+#mainMenu form
+  position: relative
+  padding-top: 10px
+  clear: both
+  #keywords
+    padding: 0 10px
+    width: 600px
+    margin-right: 10px
+    outline: none
+    line-height: 20px
+    border: 1px solid #ccc
+    border-radius: 3px
+  [type="submit"]
+    padding: 0 10px
+    background: #fff
+    border: 1px solid #ccc
+    border-radius: 3px
+    text-transform: lowercase
+    line-height: 20px
 
 

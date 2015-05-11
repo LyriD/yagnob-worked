@@ -90,11 +90,11 @@ $(function(){
     });
 
 
-    var container = document.querySelector('.categories > .row');
-    var msnry = new Masonry( container, {
-        gutter: 20,
-        itemSelector: 'section'
-    });
+    //var container = document.querySelector('.categories > .row');
+    //var msnry = new Masonry( container, {
+    //    gutter: 20,
+    //    itemSelector: 'section'
+    //});
 
 
 
