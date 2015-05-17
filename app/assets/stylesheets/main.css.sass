@@ -558,15 +558,22 @@ body.catalog
       +span(last 14)
     section
       +clearfix
+      h2
+        font-size: 2em
+        text-transform: uppercase
+
     section .col
       +trailer(2)
       width: 140px
       position: relative
-      +gallery(2 of 8)
-      +breakpoint($medium)
-        +gallery(2 of 12)
-      +breakpoint($large)
-        +gallery(2 of 16)
+      &:first-of-type
+        +span(2)
+      &:last-of-type
+        +span(last 4)
+        +breakpoint($medium)
+          +span(last 8)
+        +breakpoint($large)
+          +span(last 12)
       .imgcontainer
         font-size: 0px
         line-height: 0px
@@ -587,7 +594,7 @@ body.catalog
       h2
         position: relative
         z-index: 1
-        +adjust-font-size-to(20px)
+        font-size: 20px
         background: rgba(255,255,255,.9)
         margin: 0
         line-height: 30px
@@ -597,8 +604,12 @@ body.catalog
         margin: 0
         list-style: circle
         li
-          font-size: .9em
-          line-height: 1.2em
+          +breakpoint($medium)
+            +gallery(4 of 8)
+          +breakpoint($large)
+            +gallery(4 of 12)
+          font-size: 1.2em
+          line-height: 1.6em
           margin-bottom: .8em
 
 
@@ -735,3 +746,8 @@ select#taxon
     line-height: 20px
 
 
+body.catalog
+  section.product .imgWrap
+    height: auto
+    h2
+      white-space: normal
