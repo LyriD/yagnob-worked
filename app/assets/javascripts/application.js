@@ -74,6 +74,22 @@ $(function(){
 
     }
 
+    $jstree.bind("select_node.jstree", function (e, data) {
+        return data.instance.toggle_node(data.node);
+    });
+    //$('#leftMenu > .categories > ul > li > a, #leftMenu > .brands > ul > li > a').click(function(event){
+    //    console.log(5);
+    //    event.preventDefault();
+    //});
+
+    $('#leftMenu > .categories > ul > li').each(function(){
+        if($(this).is('.current')){
+            $jstree.jstree('open_node', $(this));
+        }
+    });
+
+    //$jstree.open_node('#');
+
 
     $scrollToTop = $('#scrollToTop');
     $(window).scroll(function(){

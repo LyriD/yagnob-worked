@@ -1,0 +1,10 @@
+- max_level = 3
+- Spree::Taxonomy.all.each do |taxonomy|
+  - if taxonomy.name != 'Специальные товары'
+    h2 = taxonomy.name
+    - if taxonomy.name == 'Категории'
+      - cache [I18n.locale, taxonomy, max_level] do
+        .categories = taxons_tree(taxonomy.root, @taxon, max_level)
+    - if taxonomy.name == 'Бренды'
+      - taxonomy.root.children.each do |brand|
+        = link_to image_tag(brand.icon.url(:normal)), seo_url(brand) unless brand.icon.blank?
