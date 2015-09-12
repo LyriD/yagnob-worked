@@ -9,3 +9,16 @@
   <%= search_field_tag :keywords, params[:keywords], :placeholder => Spree.t(:search) %>
   <%= submit_tag Spree.t(:search), :name => nil %>
 <% end %>
+
+<%# current_order.line_items.count #количество товаров в корзине %>
+<%# current_order.display_total #сумма заказа %>
+<%# cart_path %>
+
+<a href="/cart">
+  <% if current_order.nil? %>
+      <p id="cart_ajax">Ваша корзина <strong>пуста</strong></p>
+
+  <% else %>
+      <p id="cart_ajax">В корзине товаров:&nbsp<strong id="cart_count"><%= current_order.line_items.count %></strong> на сумму <strong id="cart_total"><%= current_order.display_total %></strong></p>
+
+  <% end %> </a>
