@@ -79,7 +79,6 @@ gem 'spree_contact_us', :git => 'https://github.com/jdutil/spree_contact_us'
 
 
 group :development, :test do
-
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
@@ -90,6 +89,10 @@ group :production do
   gem 'unicorn'
   # gem 'mysql2'
   gem 'therubyracer'
+  gem 'pg'
 end
 
 gem 'httparty'
+
+gem 'yaml_db'
+

@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Yagnob
   class Application < Rails::Application
-    
+
     config.to_prepare do
       # Load application's model / class decorators
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
@@ -32,5 +32,41 @@ module Yagnob
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ru
+
+    config.action_mailer.default_url_options = {:host => 'yagnob.ru', :from => 'sales@yagnob.ru'}
+    config.action_mailer.delivery_method = :smtp
+    ActionMailer::Base.smtp_settings = {
+        :address => "smtp.yandex.ru",
+        :port => 587,
+        :domain => 'yagnob.ru',
+        :authentication => :plain,
+        :user_name => 'sales@yagnob.ru',
+        :password => 'elza123'
+    }
+
+
+    # config.action_mailer.default_url_options = {:host => 'yagnob.ru', :from => 'sales@yagnob.ru'}
+    # config.action_mailer.delivery_method = :smtp
+    # # config.action_mailer.smtp_settings = {
+    # #     :address              => 'smtp.yandex.ru',
+    # #     :port                 => 587,
+    # #     :domain               => 'yagnob.ru',
+    # #     :authentication       => :plain,
+    # #     :user_name            => 'sales@yagnob.ru',
+    # #     :password             => 'elza123',
+    # #     # :enable_starttls_auto => true
+    # # }
+
+
+    # config.action_mailer.smtp_settings = {
+    #     :address              => 'smtp.yandex.ru',
+    #     :port                 => 587,
+    #     :domain               => 'yagnob.ru',
+    #     :authentication       => :plain,
+    #     :user_name            => 'sales@yagnob.ru',
+    #     :password             => 'elza123',
+    #     :enable_starttls_auto => true
+    # }
+
   end
 end

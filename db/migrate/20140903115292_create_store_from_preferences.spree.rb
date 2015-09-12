@@ -17,7 +17,7 @@ class CreateStoreFromPreferences < ActiveRecord::Migration
           'demo.spreecommerce.com'
         end
         s.mail_from_address = preference_store.get 'spree/app_configuration/mails_from' do
-          'spree@example.com'
+          'sales@yagnob.ru'
         end
 
         s.meta_description = preference_store.get('spree/app_configuration/default_meta_description') {}
