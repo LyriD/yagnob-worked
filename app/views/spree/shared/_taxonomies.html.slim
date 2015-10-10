@@ -7,4 +7,4 @@
         .categories = taxons_tree(taxonomy.root, @taxon, max_level)
     - if taxonomy.name == 'Бренды'
       - taxonomy.root.children.each do |brand|
-        = link_to image_tag(brand.icon.url(:normal)), seo_url(brand) unless brand.icon.blank?
+        = link_to image_tag(brand.icon.url(:normal)), seo_url(brand), style: 'display: block;margin-bottom: 1.5em;' unless brand.icon.blank?

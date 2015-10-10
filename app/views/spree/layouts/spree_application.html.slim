@@ -30,9 +30,4 @@ html
         = yield
       #popularProducts
         = yield :popularProducts
-      footer
-        a.logo href="#" ООО Ягноб
-        .slogan оптовая продажа и производство спортивных, туристических и охотничьих товаров
-        .phone +7 (495) 232-23-22
-        menu
-          = render :partial => "spree/static_content/static_content_list", :collection => Spree::Page.visible.footer_links, :as => :page
+      = render 'layouts/footer'

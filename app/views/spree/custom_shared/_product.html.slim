@@ -1,5 +1,5 @@
 / здесь указываешь класс или классы типа новинка, супертовар итд
-section class="product supershit new awesome cool"
+section class="product new awesome cool"
   .imgWrap
     = link_to product_image(product, :itemprop => "image"), product_url(product, :taxon_id => @taxon.try(:id))
   h2
@@ -13,7 +13,7 @@ section class="product supershit new awesome cool"
 
         = hidden_field_tag :quantity, 1
         button.toCart type="submit"
-          = icon 'shopping-cart'
+          i class="fa fa-shopping-cart"
           | в корзину
 
 
